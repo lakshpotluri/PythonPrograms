@@ -1,0 +1,26 @@
+import turtle;
+f=turtle.Pen();
+f.shape("turtle");
+f.color("blue");
+for i in range(4):
+    f.forward(100);
+    f.left(90);
+f.up();
+f.forward(50);
+f.left(90);
+f.forward(25);
+f.right(90);
+f.down();
+f.color("red");
+f.circle(25);
+f.left(90);
+f.up();
+f.forward(10);
+f.down();
+f.color("green");
+f.right(90);
+f.forward (20);
+f.left(135);
+f.forward(20);
+f.left(90);
+f.forward(20);

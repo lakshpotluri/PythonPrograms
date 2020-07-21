@@ -17,6 +17,8 @@ while tort is True:
     #Title and Icon
     pygame.display.set_caption("Space Invadors")
     icon = pygame.image.load('ufo.png')
+    yes = pygame.image.load('yes.png')
+    no = pygame.image.load('no.png')
     pygame.display.set_icon(icon)
     while neter is True:
         backdrop = pygame.image.load('backdrop.jpg')
@@ -167,6 +169,8 @@ while tort is True:
                             if enemyY[i] > 440:
                                 white = (255,255,255)
                                 screen.fill(white)
+                                screen.blit(yes,(700,500))
+                                screen.blit(no,(600,500))
                                 for l in range(num_of_enemies):
                                     enemyY[l] = 2000
                                 got()

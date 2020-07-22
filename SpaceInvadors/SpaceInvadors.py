@@ -3,16 +3,44 @@ import random
 import math
 from pygame import mixer
 
+
+
 #initialize the pygame
 
 pygame.init()
 clock = pygame.time.Clock()
 tort = True
+mouse = False
+def hehehe_you_lost():
+    
+    white = (255,255,255)
+    screen.fill(white)
+    screen.blit(yes,(700,500))
+    screen.blit(no,(600,500))
+    got()
+    ss(textX,textY)
+    while True:
+
+        for event in pygame.event.get():
+
+            
+
+            
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                troing = pygame.mouse.get_pos()
+                print (troing)
+                if troing[0] > 700 and troing[0] < 791:
+                    if troing[1] > 500 and troing[1] < 531:
+                        print ('You Pressed The Button')
+                        
+        pygame.display.update()
 
 #create the screen
 screen = pygame.display.set_mode((800, 600))
 neter = True
 while tort is True:
+    
+
 
     #Title and Icon
     pygame.display.set_caption("Space Invadors")
@@ -76,7 +104,7 @@ while tort is True:
                     game_over_text = pygame.font.Font('Restu Bundah.otf',300)
                     textX = 10
                     textY = 10
-                    5
+                    
                     time = 0
                     super_bullet = 1
                     super_bullet = False
@@ -147,6 +175,7 @@ while tort is True:
                                     
                         
                         player(playerX, playerY)
+                        
 
                         #super bullet
                         if time is 20:
@@ -163,19 +192,19 @@ while tort is True:
                             playerX = 1
                         elif playerX >736:
                             playerX = 736
-                            
+                        if mouse is True:                            
+                            for event in pygame.event.get():
+                                if event.type == pygame.MOUSEBUTTONDOWN:
+                                    troing = pygame.mouse.get_pos()
+                                    print (troing)   
                         #enemy movement
                         for i in range(num_of_enemies):
                             if enemyY[i] > 440:
-                                white = (255,255,255)
-                                screen.fill(white)
-                                screen.blit(yes,(700,500))
-                                screen.blit(no,(600,500))
-                                for event in pygame.event.get():
-                                    if event.type == pygame.MOUSEBUTTONDOWN:
-                                        troing = pygame.mouse.get_pos()
-                                        print (troing)
-                                
+                                #white = (255,255,255)
+          
+                                #mouse = True
+                                tort = False
+                                hehehe_you_lost()
                                 pygame.display.update()
                                 for l in range(num_of_enemies):
                                     enemyY[l] = 2000
@@ -241,6 +270,7 @@ while tort is True:
         def s2():
             yc14 = yc11.render(tt11,True,(255,255,255 ))
             screen.blit(yc14,(20,110))
+        
         s2()
         pygame.display.update()
 

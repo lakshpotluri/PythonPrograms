@@ -171,6 +171,12 @@ while tort is True:
                                 screen.fill(white)
                                 screen.blit(yes,(700,500))
                                 screen.blit(no,(600,500))
+                                for event in pygame.event.get():
+                                    if event.type == pygame.MOUSEBUTTONDOWN:
+                                        troing = pygame.mouse.get_pos()
+                                        print (troing)
+                                
+                                pygame.display.update()
                                 for l in range(num_of_enemies):
                                     enemyY[l] = 2000
                                 got()

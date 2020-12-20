@@ -28,7 +28,7 @@ def hehehe_you_lost():
     textX = 10
     textY = 10
     ss(textX,textY)
-    while True:
+    while tort is True:
         troing = pygame.mouse.get_pos()
         
         if troing[0] > 700 and troing[0] < 791:
@@ -42,7 +42,7 @@ def hehehe_you_lost():
                         #create the screen
                         screen = pygame.display.set_mode((800, 600))
                         neter = True
-                        while tort is True:
+                        while neter:
                             
 
 

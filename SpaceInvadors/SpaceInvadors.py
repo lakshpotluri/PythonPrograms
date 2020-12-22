@@ -137,7 +137,7 @@ def hehehe_you_lost():
                                                                 fire_bullet(bulletX,bulletY)
                                                                 bullet_state = "fire"
                                                                 time += 1
-                                                        if super_bullet is True:
+                                                        if super_bullet is True:     
                                                             if event.type == pygame.KEYDOWN:
                                                                 if event.key == pygame.K_UP:
                                                                     for i in range (num_of_enemies):

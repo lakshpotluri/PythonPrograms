@@ -17,6 +17,8 @@ pygame.display.set_caption(":Bouncing-Ball!:")
 
 background1 = pygame.image.load("background1.jpg")
 
+pic = pygame.image.load("pic .png")
+
 easy_button = pygame.image.load("easy button.png")
 
 intermediate_button = pygame.image.load("intermediate button.png")
@@ -30,7 +32,7 @@ def sr():
     screen.blit(ycr,(100,700))
     
 controls1 = pygame.font.Font('DS.otf',60)
-rrs = '''|Press 'I' for Intermediate level|'''
+rrs = '''Press 'I' for Intermediate level'''
 def ss():
     ycp = controls1.render(rrs,True,(0,0,0 ))
     screen.blit(ycp,(520,700))
@@ -44,16 +46,15 @@ def sl():
 
 efjewjkpwefipfej = pygame.font.Font('DS.otf',110)
 fe = '''Welcome to Bouncing Ball'''
-
 def opefjigwqjIup():
-    dvteneh5h3 = efjewjkpwefipfej.render(fe,True,(grey))
-    screen.blit(dvteneh5h3,(50,20))
+    dvteneh5h3 = efjewjkpwefipfej.render(fe,True,(0,0,0))
+    screen.blit(dvteneh5h3,(90,150))
 
 adf = pygame.font.Font('DS.otf',110)
 fl = '''please enjoy!'''
 def dS():
-    sdv = adf.render(fl,True,(grey))
-    screen.blit(sdv,(50,90))
+    sdv = adf.render(fl,True,(0,0,0))
+    screen.blit(sdv,(50,250))
 
 
 
@@ -61,8 +62,10 @@ def dS():
 while game_loop is True:
     screen.blit(background1, (0,0))
     screen.blit(easy_button, (200,600))
+    pygame.draw.rect(screen,grey,(945,45,390,477))
     sr()
     ss()
+    screen.blit(pic, (950 ,50)) 
     sl()
     dS()
     opefjigwqjIup()

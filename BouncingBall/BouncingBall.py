@@ -1,6 +1,10 @@
 import pygame
 from pygame import mixer
 import math
+import ctypes
+
+user32 = ctypes.windll.user32
+screensize = user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)
 
 pygame.init()
 
@@ -8,14 +12,19 @@ game_loop = True
 
 screen = pygame.display.set_mode((1500, 800))
 
+#engine = pygame.display.set_mode((screensize))
+
+
 grey = (170,170,170)
 
 icon = pygame.image.load('bouncy.png')
 pygame.display.set_icon(icon)
 
-pygame.display.set_caption(":Bouncing-Ball!:")
+pygame.display.set_caption(":Bouncy-Ball!:")
 
 background1 = pygame.image.load("background1.jpg")
+
+background2 = pygame.image.load("background2.jpg")
 
 pic = pygame.image.load("pic .png")
 
@@ -69,12 +78,41 @@ while game_loop is True:
     sl()
     dS()
     opefjigwqjIup()
+    
+    for event in pygame.event.get():
+         if event.type == pygame.KEYDOWN:
+             if event.key == pygame.K_e:
+                 print ('E')
+                 while game_loop is True:
+                     screen.blit(background2, (0,0))
+                     pygame.draw.rect(screen,grey,(945,45,390,477))
+                     pygame.display.update()
+                     
+             if event.key == pygame.K_i:
+                print ('I')
+                while game_loop is True:
+                    screen.blit(background2, (0,0))                     
+                    pygame.display.update()
+                
+             if event.key == pygame.K_p:
+                print ('P')
+                while game_loop is True:
+                    screen.blit(background2, (0,0))                     
+                    pygame.display.update()
+                
+             if event.type == pygame.QUIT:
+                 pygame.display.quit()
+                 pygame.quit()
+
+
+
+
+    
     screen.blit(intermediate_button, (660,600))
     screen.blit(proffesional_button, (1220,600))
     pygame.display.update()
-    for event in pygame.event.get():
-         if event.type == pygame.quit:
-            quit()
+    
+        
     
 
 

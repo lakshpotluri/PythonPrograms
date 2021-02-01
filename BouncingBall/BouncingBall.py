@@ -36,6 +36,10 @@ intermediate_button = pygame.image.load("intermediate button.png")
 
 proffesional_button = pygame.image.load("proffesional button.png")
 
+paddleX = 1350
+paddleY = 300
+paddleYC = 0
+
 controls2 = pygame.font.Font('DS.otf',60)
 rrr = '''Press 'E' for Easy level '''
 def sr():
@@ -67,11 +71,20 @@ def dS():
     sdv = adf.render(fl,True,(0,0,0))
     screen.blit(sdv,(50,250))
 
-paddleX = 1200
-paddleY = 300
 
 
-
+def jolly():
+    screen.blit(background2, (0,0))
+    paddleY += paddleYC
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:
+                paddleYC = -10
+            if event.key == pygame.K_DOWN:
+                paddleYC = 10
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
+                paddleYC = 0
 
 while game_loop is True:
     screen.blit(background1, (0,0))
@@ -89,62 +102,71 @@ while game_loop is True:
              if event.key == pygame.K_e:
                  print ('E')
                  while game_loop is True:
+                     #jolly()
                      screen.blit(background2, (0,0))
+                     paddleY += paddleYC
                      for event in pygame.event.get():
                          if event.type == pygame.KEYDOWN:
                              if event.key == pygame.K_UP:
-                                 paddleY -= 20
+                                 paddleYC = -10
                              if event.key == pygame.K_DOWN:
-                                 paddleY += 20
-                     for event in pygame.event.get():
+                                 paddleYC = 10
                          if event.type == pygame.KEYUP:
-                             if event.key == pygame.K_UP:
-                                 paddleY -= 20
-                             if event.key == pygame.K_DOWN:
-                                 paddleY += 20
+                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
+                                 paddleYC = 0
+                     if paddleY < 51:
+                         paddleY = 51
+                     if paddleY > 500:
+                         paddleY = 500
                         
-                        
-                     screen.blit(paddle, (1200,paddleY))
+                     screen.blit(paddle, (1350,paddleY))
                      pygame.display.update()
                      
              if event.key == pygame.K_i:
                 print ('I')
                 while game_loop is True:
                     screen.blit(background2, (0,0))
+                    paddleY += paddleYC
                     for event in pygame.event.get():
-                         if event.type == pygame.KEYDOWN:
-                             if event.key == pygame.K_UP:
-                                 paddleY -= 15
-                             if event.key == pygame.K_DOWN:
-                                 paddleY += 15
-                    for event in pygame.event.get():
-                        if event.type == pygame.KEYUP:
+                        if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
-                                paddleY -= 15
+                                paddleYC = -10
                             if event.key == pygame.K_DOWN:
-                                paddleY += 15
-                    screen.blit(paddle, (1200,paddleY))            
+                                paddleYC = 10
+                        if event.type == pygame.KEYUP:
+                            if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
+                                paddleYC = 0
+                                
+                    if paddleY < 51:
+                        paddleY = 51
+                    if paddleY > 500:
+                        paddleY = 500
+                         
+                    screen.blit(paddle, (1350,paddleY))            
                     pygame.display.update()
                 
              if event.key == pygame.K_p:
                 print ('P')
                 while game_loop is True:
                     screen.blit(background2, (0,0))
+                    paddleY += paddleYC
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
-                                paddleY -= 15
+                                paddleYC = -10
                             if event.key == pygame.K_DOWN:
-                                paddleY += 15
-                    for event in pygame.event.get():
+                                paddleYC = 10
                         if event.type == pygame.KEYUP:
-                            if event.key == pygame.K_UP:
-                                paddleY -= 15
-                            if event.key == pygame.K_DOWN:
-                                paddleY += 15
+                            if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
+                                paddleYC = 0
+                    
                         
-                        
-                    screen.blit(paddle, (1200,paddleY))                    
+                    if paddleY < 51:
+                        paddleY = 51
+                    if paddleY > 500:
+                        paddleY = 500
+                         
+                    screen.blit(paddle, (1350,paddleY))                    
                     pygame.display.update()
                 
              if event.type == pygame.QUIT:

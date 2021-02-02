@@ -81,9 +81,8 @@ basketballY = 360
 basketballX2 = 0
 basketballY2 = 360
 
-def jolly():
-    j = 1+2
-    
+
+                
 
 while game_loop is True:
     screen.blit(background1, (0,0))
@@ -104,23 +103,21 @@ while game_loop is True:
              if event.key == pygame.K_e:
                  print ('E')
                  while game_loop is True:
-                         #jolly()
-
 
                      if soll is True:
-                         basketballX += 6
-                         basketballY += 6
+                         basketballX += 2
+                         basketballY += 2
                      if soll is False:
-                         basketballX += 6
-                         basketballY -= 6
+                         basketballX += 2
+                         basketballY -= 2
 
 
                      if toll is True:
-                         basketballX2 += 6
-                         basketballY2 += 6
+                         basketballX2 += 2
+                         basketballY2 += 2
                      if toll is False:
-                         basketballX2 += 6
-                         basketballY2 -= 6
+                         basketballX2 += 2
+                         basketballY2 -= 2
 
                     
                      
@@ -138,12 +135,27 @@ while game_loop is True:
                      for event in pygame.event.get():
                          if event.type == pygame.KEYDOWN:
                              if event.key == pygame.K_UP:
-                                 paddleYC = -10
+                                 paddleYC = -2
                              if event.key == pygame.K_DOWN:
-                                 paddleYC = 10
+                                 paddleYC = 2
                          if event.type == pygame.KEYUP:
                              if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                  paddleYC = 0
+            
+                     if paddleX == basketballX + 64:
+                         if paddleY < basketballY + 64 < paddleY + 116:
+                             while game_loop is True:
+                                 basketballY -= 2
+                                 basketballX -= 2
+                                 
+
+                     if paddleX == basketballX2 + 64:
+                         if paddleY < basketballY2 + 64 < paddleY + 116:
+                             while game_loop is True:
+                                 basketballY2 -= 2
+                                 basketballX2 -= 2
+                                 
+                                 
 
                                  
                      if paddleY < 51:
@@ -175,18 +187,18 @@ while game_loop is True:
                 while game_loop is True:
 
                     if soll is True:
-                        basketballX += 6
-                        basketballY += 6
+                        basketballX += 2
+                        basketballY += 2
                     if soll is False:
-                        basketballX += 6
-                        basketballY -= 6
+                        basketballX += 2
+                        basketballY -= 2
 
                     if toll is True:
-                        basketballX2 += 6
-                        basketballY2 += 6
+                        basketballX2 += 2
+                        basketballY2 += 2
                     if toll is False:
-                        basketballX2 += 6
-                        basketballY2 -= 6
+                        basketballX2 += 2
+                        basketballY2 -= 2
 
 
                     screen.blit(background2, (0,0))
@@ -194,9 +206,9 @@ while game_loop is True:
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
-                                paddleYC = -10
+                                paddleYC = -2
                             if event.key == pygame.K_DOWN:
-                                paddleYC = 10
+                                paddleYC = 2
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0
@@ -207,6 +219,16 @@ while game_loop is True:
                         paddleY = 510
 
                         
+                    if paddleX == basketballX2 + 64:
+                        if paddleY < basketballY2 + 64 < paddleY + 116:
+                            while game_loop is True:
+                                basketballY2 -= 2
+                                basketballX2 -= 2
+                    if paddleX == basketballX + 64:
+                        if paddleY < basketballY + 64 < paddleY + 116:
+                            while game_loop is True:
+                                basketballY -= 2
+                                basketballX -= 2                        
                     if basketballY < 51:
                         basketballY = 51
                         soll = True
@@ -232,28 +254,28 @@ while game_loop is True:
                 while game_loop is True:
 
                     if soll is True:
-                        basketballX += 6
-                        basketballY += 6
+                        basketballX += 2
+                        basketballY += 2
                     if soll is False:
-                        basketballX += 6
-                        basketballY -= 6
+                        basketballX += 2
+                        basketballY -= 2
 
 
                     if toll is True:
-                        basketballX2 += 6
-                        basketballY2 += 6
+                        basketballX2 += 2
+                        basketballY2 += 2
                     if toll is False:
-                        basketballX2 += 6
-                        basketballY2 -= 6
+                        basketballX2 += 2
+                        basketballY2 -= 2
 
                     screen.blit(background2, (0,0))
                     paddleY += paddleYC
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
-                                paddleYC = -10
+                                paddleYC = -2
                             if event.key == pygame.K_DOWN:
-                                paddleYC = 10
+                                paddleYC = 2
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0                    
@@ -276,9 +298,18 @@ while game_loop is True:
                         toll = True
                     if basketballY2 > 650:
                         basketballY2 = 650
-                        toll = False                        
+                        toll = False
                         
-                        
+                    if paddleX == basketballX2 + 64:
+                        if paddleY < basketballY2 + 64 < paddleY + 116:
+                            while game_loop is True:
+                                basketballY2 -= 2
+                                basketballX2 -= 2                        
+                    if paddleX == basketballX + 64:
+                        if paddleY < basketballY + 64 < paddleY + 116:
+                            while game_loop is True:
+                                basketballY -= 2
+                                basketballX -= 2                        
                     screen.blit(basketball, (basketballX,basketballY))
                     screen.blit(basketball2, (basketballX2,basketballY2))                   
                     screen.blit(paddle, (1350,paddleY))                    

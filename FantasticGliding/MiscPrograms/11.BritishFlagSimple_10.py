@@ -1,0 +1,37 @@
+import turtle;
+import math;
+f=turtle.Pen();
+f.color("blue");
+f.shape("turtle");
+a=300
+b=150
+c=math.sqrt(math.pow(a,2)+math.pow(b,2));
+f.up();
+f.forward(25);
+f.down();
+f.left(90);
+f.forward(b);
+f.left(90);
+f.forward(a)
+f.left(90);
+f.forward(b);
+f.left(90);
+f.forward(a);
+f.left(154);
+f.forward(c);
+f.left(26);
+f.left(90);
+f.forward(b);
+f.left(117);
+f.forward(c);
+f.left(153);
+f.forward(a/2);
+f.left(90);
+f.forward(b);
+f.left(180);
+f.left(90);
+f.forward(a/2);
+f.right(90);
+f.forward(b/2);
+f.right(90);
+f.forward(a);

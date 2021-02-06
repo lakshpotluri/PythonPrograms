@@ -99,124 +99,120 @@ while game_loop is True:
     soll = True    
 
     for event in pygame.event.get():
-         if event.type == pygame.KEYDOWN:
-             if event.key == pygame.K_e:
-                 print ('E')
-                 while game_loop is True:
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_e:
+                print ('E')
+                while game_loop is True:
 
-                     if soll is True:
-                         basketballX += 2
-                         basketballY += 2
-                     if soll is False:
-                         basketballX += 2
-                         basketballY -= 2
+                    if soll is True:
+                        basketballX += 2
+                        basketballY += 2
+                    if soll is False:
+                        basketballX += 2
+                        basketballY -= 2
 
 
-                     if toll is True:
-                         basketballX2 += 2
-                         basketballY2 += 2
-                     if toll is False:
-                         basketballX2 += 2
-                         basketballY2 -= 2
+                    if toll is True:
+                        basketballX2 += 2
+                        basketballY2 += 2
+                    if toll is False:
+                        basketballX2 += 2
+                        basketballY2 -= 2
                          
-                     if poop is False:
-                         basketballX -= 2
-                         basketballY -= 2                 
-                         basketballX2 -= 2
-                         basketballY2 -= 2
-                         break
+                    if poop is False:
+                        basketballX -= 2
+                        basketballY -= 2                 
+                        basketballX2 -= 2
+                        basketballY2 -= 2
+                        break
                       
 
                          
-                     screen.blit(background2, (0,0))
+                    screen.blit(background2, (0,0))
 
-                     screen.blit(paddle, (1350,paddleY))
-                     screen.blit(basketball, (basketballX,basketballY))
-                     screen.blit(basketball2, (basketballX2,basketballY2))
+                    screen.blit(paddle, (1350,paddleY))
+                    screen.blit(basketball, (basketballX,basketballY))
+                    screen.blit(basketball2, (basketballX2,basketballY2))
 
-                     pygame.display.update()
+                    pygame.display.update()
                      
-                     paddleY += paddleYC
-                     if game_loop is False:
-                         print('it works')
-                     for event in pygame.event.get():
-                         if event.type == pygame.KEYDOWN:
-                             if event.key == pygame.K_UP:
-                                 paddleYC = -2
-                             if event.key == pygame.K_DOWN:
-                                 paddleYC = 2
-                         if event.type == pygame.KEYUP:
-                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
-                                 paddleYC = 0
+                    paddleY += paddleYC
+                    if game_loop is False:
+                        print('it works')
+                    for event in pygame.event.get():
+                        if event.type == pygame.KEYDOWN:
+                            if event.key == pygame.K_UP:
+                                paddleYC = -2
+                            if event.key == pygame.K_DOWN:
+                                paddleYC = 2
+                        if event.type == pygame.KEYUP:
+                            if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
+                                paddleYC = 0
             
-                     if paddleX == basketballX + 64:
-                         if paddleY < basketballY + 64 < paddleY + 116:
-                             while game_loop is True:
+                    if paddleX == basketballX + 64:
+                        if paddleY < basketballY + 64 < paddleY + 116:
+                            while game_loop is True:
                                  #print ('it works')
-                                 basketballY -= 2
-                                 basketballX -= 2
-                                 toll = False
-                                 soll = False
-                                 poop = False 
-                                 break
-                         if paddleY + 116 < basketballY < paddleY + 232:
-                             while game_loop is True:
-                                 print ('it works')
-                                 basketballY -= 2
-                                 basketballX -= 2
-                                 toll = False
-                                 soll = False
-                                 poop = False 
-                                 break
+                                basketballY -= 2
+                                basketballX -= 2
+                                toll = False
+                                soll = False
+                                poop = False 
+                                break
+                        if paddleY + 116 < basketballY < paddleY + 232:
+                            while game_loop is True:
+                                print ('it works')
+                                basketballY -= 2
+                                basketballX -= 2
+                                toll = False
+                                soll = False
+                                poop = False 
+                                break
                                 
                                  
 
-                     if paddleX == basketballX2 + 64:
-                         if paddleY < basketballY2 + 64 < paddleY + 116:
-                             while game_loop is True:
-                                 basketballY2 -= 2
-                                 basketballX2 -= 2
-                                 toll = False
-                                 soll = False
-                                 poop = False 
-                                 break
-                         if paddleY + 116 < basketballY2 < paddleY + 232:
-                             while game_loop is True:
-                                 print('fdskljdfjofjhjog')
-                                 basketballY2 -= 2
-                                 basketballX2 -= 2
-                                 toll = False
-                                 soll = False
-                                 poop = False 
-                                 break                                
+                    if paddleX == basketballX2 + 64:
+                        if paddleY < basketballY2 + 64 < paddleY + 116:
+                            while game_loop is True:
+                                basketballY2 -= 2
+                                basketballX2 -= 2
+                                toll = False
+                                soll = False
+                                poop = False 
+                                break
+                        if paddleY + 116 < basketballY2 < paddleY + 232:
+                            while game_loop is True:
+                                print('fdskljdfjofjhjog')
+                                basketballY2 -= 2
+                                basketballX2 -= 2
+                                toll = False
+                                soll = False
+                                poop = False 
+                                break                                
                                  
 
                                  
-                     if paddleY < 51:
-                         paddleY = 51
-                     if paddleY > 510:
-                         paddleY = 510
+                    if paddleY < 51:
+                        paddleY = 51
+                    if paddleY > 510:
+                        paddleY = 510
 
                          
-                     if basketballY < 51:
-                         basketballY = 51
-                         soll = True
-                     if basketballY > 650:
-                         basketballY = 650
-                         soll = False
+                    if basketballY < 51:
+                        basketballY = 51
+                        soll = True
+                    if basketballY > 650:
+                        basketballY = 650
+                        soll = False
                          
-                     if basketballY2 < 51:
-                         basketballY2 = 51
-                         toll = True
-                     if basketballY2 > 650:
-                         basketballY2 = 650
-                         toll = False           
-
-                         
-                        
-                     pygame.display.update()
+                    if basketballY2 < 51:
+                        basketballY2 = 51
+                        toll = True
+                    if basketballY2 > 650:
+                        basketballY2 = 650
+                        toll = False           
                      
-             if event.key == pygame.K_i:
+            if event.key == pygame.K_i:
                 print ('I')
                 while game_loop is True:
 
@@ -282,8 +278,9 @@ while game_loop is True:
                     screen.blit(basketball2, (basketballX2,basketballY2))
                     screen.blit(paddle, (1350,paddleY))            
                     pygame.display.update()
-                
-             if event.key == pygame.K_p:
+
+                    
+            if event.key == pygame.K_p:
                 print ('P')
                 while game_loop is True:
 
@@ -349,10 +346,6 @@ while game_loop is True:
                     screen.blit(paddle, (1350,paddleY))                    
                     pygame.display.update()
                 
-             if event.type == pygame.QUIT:
-                 pygame.display.quit()
-                 pygame.quit()
-                 quit()
 
 
 

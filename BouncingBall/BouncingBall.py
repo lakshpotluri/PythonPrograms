@@ -1,6 +1,7 @@
 import pygame
 from pygame import mixer
 import math
+import sys
 import ctypes
 
 user32 = ctypes.windll.user32
@@ -48,7 +49,7 @@ paddleYC = 0
 controls2 = pygame.font.Font('DS.otf',60)
 rrr = '''Press 'E' for Easy level '''
 def sr():
-    ycr = controls2.render(rrr,True,(0,0,0 ))
+    ycr = controls2.render(rrr,True,(grey,grey,grey ))
     screen.blit(ycr,(100,700))
     
 controls1 = pygame.font.Font('DS.otf',60)
@@ -68,13 +69,13 @@ efjewjkpwefipfej = pygame.font.Font('DS.otf',110)
 fe = '''Welcome to Bouncing Ball'''
 def opefjigwqjIup():
     dvteneh5h3 = efjewjkpwefipfej.render(fe,True,(grey,grey,grey))
-    screen.blit(dvteneh5h3,(90,150))
+    screen.blit(dvteneh5h3,(90,55))
 
 adf = pygame.font.Font('DS.otf',110)
 fl = '''please enjoy!'''
 def dS():
     sdv = adf.render(fl,True,(grey,grey,grey))
-    screen.blit(sdv,(50,250))
+    screen.blit(sdv,(50,130))
 
 basketballX = 400
 basketballY = 360
@@ -100,13 +101,17 @@ while game_loop is True:
     soll = True    
 
     for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()        
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_e:
+    
                 print ('E')
                 while game_loop is True:
-
                     poop = True
-                    
+
+                            
                     if soll is True:
                         basketballX += house_timing
                         basketballY += house_timing
@@ -143,7 +148,11 @@ while game_loop is True:
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0
-            
+                        if event.type == pygame.QUIT:
+                            pygame.quit()
+                            sys.exit()
+                            
+                            
                     if paddleX == basketballX + 64:
                         print(house_timing)
                         if paddleY < basketballY + 64 < paddleY + 116:
@@ -230,7 +239,11 @@ while game_loop is True:
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0
-                                
+                        if event.type == pygame.QUIT:
+                            pygame.quit()
+                            sys.exit()
+
+                            
                     if paddleY < 51:
                         paddleY = 51
                     if paddleY > 510:
@@ -298,7 +311,10 @@ while game_loop is True:
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0                    
-                        
+                        if event.type == pygame.QUIT:
+                            pygame.quit()
+                            sys.exit()
+                            
                     if paddleY < 51:
                         paddleY = 51
                     if paddleY > 510:

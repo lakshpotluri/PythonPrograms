@@ -14,15 +14,16 @@ screen = pygame.display.set_mode((1500, 800))
 
 #engine = pygame.display.set_mode((screensize))
 
+house_timing = 5
 
-grey = (170,170,170)
+grey = (255)
 
 icon = pygame.image.load('bouncy.png')
 pygame.display.set_icon(icon)
 
 pygame.display.set_caption(":Bouncy-Ball!:")
 
-background1 = pygame.image.load("background1.jpg")
+background1 = pygame.image.load("background1.png")
 
 background2 = pygame.image.load("background2.jpg")
 
@@ -53,26 +54,26 @@ def sr():
 controls1 = pygame.font.Font('DS.otf',60)
 rrs = '''Press 'I' for Intermediate level'''
 def ss():
-    ycp = controls1.render(rrs,True,(0,0,0 ))
+    ycp = controls1.render(rrs,True,(grey,grey,grey))
     screen.blit(ycp,(520,700))
 
 controls3 = pygame.font.Font('DS.otf',50)
 rrj = '''Press 'P' for Proffesional level'''
 def sl():
-    ycj = controls3.render(rrj,True,(0,0,0 ))
+    ycj = controls3.render(rrj,True,(grey,grey,grey))
     screen.blit(ycj,(1065,700))
 
 
 efjewjkpwefipfej = pygame.font.Font('DS.otf',110)
 fe = '''Welcome to Bouncing Ball'''
 def opefjigwqjIup():
-    dvteneh5h3 = efjewjkpwefipfej.render(fe,True,(0,0,0))
+    dvteneh5h3 = efjewjkpwefipfej.render(fe,True,(grey,grey,grey))
     screen.blit(dvteneh5h3,(90,150))
 
 adf = pygame.font.Font('DS.otf',110)
 fl = '''please enjoy!'''
 def dS():
-    sdv = adf.render(fl,True,(0,0,0))
+    sdv = adf.render(fl,True,(grey,grey,grey))
     screen.blit(sdv,(50,250))
 
 basketballX = 400
@@ -87,10 +88,10 @@ poop = True
 while game_loop is True:
     screen.blit(background1, (0,0))
     screen.blit(easy_button, (200,600))
-    pygame.draw.rect(screen,grey,(945,45,390,477))
+    #pygame.draw.rect(screen,grey,(945,45,390,477))
     sr()
     ss()
-    screen.blit(pic, (950 ,50)) 
+    #screen.blit(pic, (950 ,50)) 
     sl()
     dS()
     opefjigwqjIup()
@@ -104,28 +105,22 @@ while game_loop is True:
                 print ('E')
                 while game_loop is True:
 
+                    poop = True
+                    
                     if soll is True:
-                        basketballX += 2
-                        basketballY += 2
+                        basketballX += house_timing
+                        basketballY += house_timing
                     if soll is False:
-                        basketballX += 2
-                        basketballY -= 2
+                        basketballX += house_timing
+                        basketballY -= house_timing
 
 
                     if toll is True:
-                        basketballX2 += 2
-                        basketballY2 += 2
+                        basketballX2 += house_timing
+                        basketballY2 += house_timing
                     if toll is False:
-                        basketballX2 += 2
-                        basketballY2 -= 2
-                         
-                    if poop is False:
-                        basketballX -= 2
-                        basketballY -= 2                 
-                        basketballX2 -= 2
-                        basketballY2 -= 2
-                        break
-                      
+                        basketballX2 += house_timing
+                        basketballY2 -= house_timing                      
 
                          
                     screen.blit(background2, (0,0))
@@ -142,53 +137,46 @@ while game_loop is True:
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
-                                paddleYC = -2
+                                paddleYC = -house_timing
                             if event.key == pygame.K_DOWN:
-                                paddleYC = 2
+                                paddleYC = house_timing
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0
             
                     if paddleX == basketballX + 64:
+                        print(house_timing)
                         if paddleY < basketballY + 64 < paddleY + 116:
                             while game_loop is True:
-                                 #print ('it works')
-                                basketballY -= 2
-                                basketballX -= 2
-                                toll = False
-                                soll = False
-                                poop = False 
-                                break
-                        if paddleY + 116 < basketballY < paddleY + 232:
-                            while game_loop is True:
                                 print ('it works')
-                                basketballY -= 2
-                                basketballX -= 2
-                                toll = False
-                                soll = False
+                                basketballY -= house_timing
+                                basketballX -= house_timing
+                                poop = False                                 
+                        if paddleY + 116 < basketballY < paddleY + 232:
+                            while poop is True:
+                                print ('it works')
+                                basketballY -= house_timing
+                                basketballX -= house_timing
                                 poop = False 
-                                break
+                                
                                 
                                  
 
                     if paddleX == basketballX2 + 64:
+                        print(house_timing)
                         if paddleY < basketballY2 + 64 < paddleY + 116:
-                            while game_loop is True:
-                                basketballY2 -= 2
-                                basketballX2 -= 2
-                                toll = False
-                                soll = False
-                                poop = False 
-                                break
-                        if paddleY + 116 < basketballY2 < paddleY + 232:
-                            while game_loop is True:
+                            while poop is True:
                                 print('fdskljdfjofjhjog')
-                                basketballY2 -= 2
-                                basketballX2 -= 2
-                                toll = False
-                                soll = False
+                                basketballY2 -= house_timing
+                                basketballX2 -= house_timing
+                                poop = False                                 
+                        if paddleY + 116 < basketballY2 < paddleY + 232:
+                            while poop is True:
+                                print('fdskljdfjofjhjog')
+                                basketballY2 -= house_timing
+                                basketballX2 -= house_timing
                                 poop = False 
-                                break                                
+                                                                
                                  
 
                                  
@@ -217,18 +205,18 @@ while game_loop is True:
                 while game_loop is True:
 
                     if soll is True:
-                        basketballX += 2
-                        basketballY += 2
+                        basketballX += house_timing
+                        basketballY += house_timing
                     if soll is False:
-                        basketballX += 2
-                        basketballY -= 2
+                        basketballX += house_timing
+                        basketballY -= house_timing
 
                     if toll is True:
-                        basketballX2 += 2
-                        basketballY2 += 2
+                        basketballX2 += house_timing
+                        basketballY2 += house_timing
                     if toll is False:
-                        basketballX2 += 2
-                        basketballY2 -= 2
+                        basketballX2 += house_timing
+                        basketballY2 -= house_timing
 
 
                     screen.blit(background2, (0,0))
@@ -236,9 +224,9 @@ while game_loop is True:
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
-                                paddleYC = -2
+                                paddleYC = -house_timing
                             if event.key == pygame.K_DOWN:
-                                paddleYC = 2
+                                paddleYC = house_timing
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0
@@ -252,13 +240,13 @@ while game_loop is True:
                     if paddleX == basketballX2 + 64:
                         if paddleY < basketballY2 + 64 < paddleY + 116:
                             while game_loop is True:
-                                basketballY2 -= 2
-                                basketballX2 -= 2
+                                basketballY2 -= house_timing
+                                basketballX2 -= house_timing
                     if paddleX == basketballX + 64:
                         if paddleY < basketballY + 64 < paddleY + 116:
                             while game_loop is True:
-                                basketballY -= 2
-                                basketballX -= 2                        
+                                basketballY -= house_timing
+                                basketballX -= house_timing                        
                     if basketballY < 51:
                         basketballY = 51
                         soll = True
@@ -285,28 +273,28 @@ while game_loop is True:
                 while game_loop is True:
 
                     if soll is True:
-                        basketballX += 2
-                        basketballY += 2
+                        basketballX += house_timing
+                        basketballY += house_timing
                     if soll is False:
-                        basketballX += 2
-                        basketballY -= 2
+                        basketballX += house_timing
+                        basketballY -= house_timing
 
 
                     if toll is True:
-                        basketballX2 += 2
-                        basketballY2 += 2
+                        basketballX2 += house_timing
+                        basketballY2 += house_timing
                     if toll is False:
-                        basketballX2 += 2
-                        basketballY2 -= 2
+                        basketballX2 += house_timing
+                        basketballY2 -= house_timing
 
                     screen.blit(background2, (0,0))
                     paddleY += paddleYC
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
-                                paddleYC = -2
+                                paddleYC = -house_timing
                             if event.key == pygame.K_DOWN:
-                                paddleYC = 2
+                                paddleYC = house_timing
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0                    
@@ -334,13 +322,13 @@ while game_loop is True:
                     if paddleX == basketballX2 + 64:
                         if paddleY < basketballY2 + 64 < paddleY + 116:
                             while game_loop is True:
-                                basketballY2 -= 2
-                                basketballX2 -= 2                        
+                                basketballY2 -= house_timing
+                                basketballX2 -= house_timing                        
                     if paddleX == basketballX + 64:
                         if paddleY < basketballY + 64 < paddleY + 116:
                             while game_loop is True:
-                                basketballY -= 2
-                                basketballX -= 2                        
+                                basketballY -= house_timing
+                                basketballX -= house_timing                        
                     screen.blit(basketball, (basketballX,basketballY))
                     screen.blit(basketball2, (basketballX2,basketballY2))                   
                     screen.blit(paddle, (1350,paddleY))                    

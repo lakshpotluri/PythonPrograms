@@ -46,6 +46,9 @@ paddleX = 1350
 paddleY = 300
 paddleYC = 0
 
+
+balls = 2
+
 controls2 = pygame.font.Font('DS.otf',60)
 rrr = '''Press 'E' for Easy level '''
 def sr():
@@ -86,6 +89,8 @@ basketballY2 = 360
 poop = True
 soop = True                
 
+lolly = True
+polly = True
 while game_loop is True:
     screen.blit(background1, (0,0))
     screen.blit(easy_button, (200,600))
@@ -110,33 +115,39 @@ while game_loop is True:
                 while game_loop is True:
                     
 
-                    if paddleX < basketballX + 64:
+                    if paddleX + 24 <= basketballX:
                         if paddleY < basketballY + 64 < paddleY + 116:
-                            while poop is True:
+                            while lolly is True:
                                 basketballY -= house_timing
                                 basketballX -= house_timing
+                                balls = 1
                                 poop = False
-                    if paddleX < basketballX + 64:
+                                lolly = False
+                    if paddleX + 24 <= basketballX :
                         if paddleY + 116 < basketballY < paddleY + 232:
-                            while poop is True:
+                            while lolly is True:
                                 print ('fdskljdfjofjhjog')
                                 basketballY -= house_timing
                                 basketballX -= house_timing
-                                poop = False                                                          
-
-                    if paddleX < basketballX2 + 64:
+                                balls = 1
+                                poop = False
+                                lolly = False
+                                    
+                    if paddleX + 24 <= basketballX2:
                         if paddleY < basketballY2 + 64 < paddleY + 116:
-                            while soop is True:
+                            while polly is True:
                                 basketballY2 -= house_timing
                                 basketballX2 -= house_timing
+                                balls = 1
                                 soop = False
-                    if paddleX < basketballX2 + 64:
+                                polly = False
                         if paddleY + 116 < basketballY2 < paddleY + 232:
-                            while soop is True:
-                                print('fdskljdfjofjhjog')
+                            while polly is True:
                                 basketballY2 -= house_timing
                                 basketballX2 -= house_timing
+                                balls = 1
                                 soop = False
+                                polly = False
                                 
                                                                 
                                  
@@ -161,8 +172,10 @@ while game_loop is True:
                     screen.blit(background2, (0,0))
 
                     screen.blit(paddle, (1350,paddleY))
-                    screen.blit(basketball, (basketballX,basketballY))
-                    screen.blit(basketball2, (basketballX2,basketballY2))
+                    if poop is True:
+                        screen.blit(basketball, (basketballX,basketballY))
+                    if soop is True:
+                        screen.blit(basketball2, (basketballX2,basketballY2))
 
                     pygame.display.update()
                      

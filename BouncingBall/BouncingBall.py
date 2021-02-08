@@ -84,7 +84,7 @@ basketballX2 = 0
 basketballY2 = 360
 
 poop = True
-                
+soop = True                
 
 while game_loop is True:
     screen.blit(background1, (0,0))
@@ -105,27 +105,57 @@ while game_loop is True:
             pygame.quit()
             sys.exit()        
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_e:
-    
+            if event.key == pygame.K_e:    
                 print ('E')
                 while game_loop is True:
-                    poop = True
+                    
 
-                            
-                    if soll is True:
-                        basketballX += house_timing
-                        basketballY += house_timing
-                    if soll is False:
-                        basketballX += house_timing
-                        basketballY -= house_timing
+                    if paddleX < basketballX + 64:
+                        if paddleY < basketballY + 64 < paddleY + 116:
+                            while poop is True:
+                                basketballY -= house_timing
+                                basketballX -= house_timing
+                                poop = False
+                    if paddleX < basketballX + 64:
+                        if paddleY + 116 < basketballY < paddleY + 232:
+                            while poop is True:
+                                print ('fdskljdfjofjhjog')
+                                basketballY -= house_timing
+                                basketballX -= house_timing
+                                poop = False                                                          
 
+                    if paddleX < basketballX2 + 64:
+                        if paddleY < basketballY2 + 64 < paddleY + 116:
+                            while soop is True:
+                                basketballY2 -= house_timing
+                                basketballX2 -= house_timing
+                                soop = False
+                    if paddleX < basketballX2 + 64:
+                        if paddleY + 116 < basketballY2 < paddleY + 232:
+                            while soop is True:
+                                print('fdskljdfjofjhjog')
+                                basketballY2 -= house_timing
+                                basketballX2 -= house_timing
+                                soop = False
+                                
+                                                                
+                                 
 
-                    if toll is True:
-                        basketballX2 += house_timing
-                        basketballY2 += house_timing
-                    if toll is False:
-                        basketballX2 += house_timing
-                        basketballY2 -= house_timing                      
+                    if poop is True:        
+                        if soll is True:
+                            basketballX += house_timing
+                            basketballY += house_timing
+                        if soll is False:
+                            basketballX += house_timing
+                            basketballY -= house_timing
+
+                    if soop is True:   
+                        if toll is True:
+                            basketballX2 += house_timing
+                            basketballY2 += house_timing
+                        if toll is False:
+                            basketballX2 += house_timing
+                            basketballY2 -= house_timing                      
 
                          
                     screen.blit(background2, (0,0))
@@ -137,8 +167,6 @@ while game_loop is True:
                     pygame.display.update()
                      
                     paddleY += paddleYC
-                    if game_loop is False:
-                        print('it works')
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
@@ -153,41 +181,6 @@ while game_loop is True:
                             sys.exit()
                             
                             
-                    if paddleX == basketballX + 64:
-                        print(house_timing)
-                        if paddleY < basketballY + 64 < paddleY + 116:
-                            while game_loop is True:
-                                print ('it works')
-                                basketballY -= house_timing
-                                basketballX -= house_timing
-                                poop = False                                 
-                        if paddleY + 116 < basketballY < paddleY + 232:
-                            while poop is True:
-                                print ('it works')
-                                basketballY -= house_timing
-                                basketballX -= house_timing
-                                poop = False 
-                                
-                                
-                                 
-
-                    if paddleX == basketballX2 + 64:
-                        print(house_timing)
-                        if paddleY < basketballY2 + 64 < paddleY + 116:
-                            while poop is True:
-                                print('fdskljdfjofjhjog')
-                                basketballY2 -= house_timing
-                                basketballX2 -= house_timing
-                                poop = False                                 
-                        if paddleY + 116 < basketballY2 < paddleY + 232:
-                            while poop is True:
-                                print('fdskljdfjofjhjog')
-                                basketballY2 -= house_timing
-                                basketballX2 -= house_timing
-                                poop = False 
-                                                                
-                                 
-
                                  
                     if paddleY < 51:
                         paddleY = 51

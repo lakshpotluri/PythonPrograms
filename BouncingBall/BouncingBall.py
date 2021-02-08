@@ -89,6 +89,9 @@ basketballY2 = 360
 poop = True
 soop = True                
 
+for_the_other_one = False
+for_the_other_one2 = False
+
 lolly = True
 polly = True
 while game_loop is True:
@@ -120,7 +123,16 @@ while game_loop is True:
                             while lolly is True:
                                 basketballY -= house_timing
                                 basketballX -= house_timing
-                                balls = 1
+                                if balls == 2:
+                                    balls = 1
+                                    for_the_other_one = True
+                                if for_the_other_one is False:
+                                    if balls == 1:
+                                        print('it kind of works')
+                                        balls = 0
+                                        while balls == 0:
+                                            print(balls)
+                                            screen.blit(background1, (0,0))
                                 poop = False
                                 lolly = False
                     if paddleX + 24 <= basketballX :
@@ -129,23 +141,46 @@ while game_loop is True:
                                 print ('fdskljdfjofjhjog')
                                 basketballY -= house_timing
                                 basketballX -= house_timing
-                                balls = 1
+                                if balls == 2:
+                                    balls = 1
+                                if balls == 1:
+                                    print('it kind of works')
+                                    balls = 0
+                                    while balls == 0:
+                                        screen.blit(background1, (0,0))
+                                        pygame.display.update()
                                 poop = False
                                 lolly = False
-                                    
+                    print (balls)                
                     if paddleX + 24 <= basketballX2:
                         if paddleY < basketballY2 + 64 < paddleY + 116:
                             while polly is True:
                                 basketballY2 -= house_timing
                                 basketballX2 -= house_timing
-                                balls = 1
+                                if balls == 2:
+                                    balls = 1
+                                    for_the_other_one2 = True
+                                if balls == 1:
+                                    print('it kind of works')
+                                    balls = 0
+                                    while balls == 0:
+                                        print(balls)
+                                        screen.blit(background1, (0,0))
+                                        pygame.display.update()
                                 soop = False
                                 polly = False
                         if paddleY + 116 < basketballY2 < paddleY + 232:
                             while polly is True:
                                 basketballY2 -= house_timing
                                 basketballX2 -= house_timing
-                                balls = 1
+                                if balls == 2:
+                                    balls = 1
+                                if balls == 1:
+                                    print('it kind of works')
+                                    balls = 0
+                                    while balls == 0:
+                                        print(balls)
+                                        screen.blit(background1, (0,0))
                                 soop = False
                                 polly = False
                                 

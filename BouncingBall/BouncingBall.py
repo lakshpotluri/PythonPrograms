@@ -28,6 +28,9 @@ background1 = pygame.image.load("background1.png")
 
 background2 = pygame.image.load("background2.jpg")
 
+game_over_screen = pygame.image.load("game_over.jpg")
+
+
 pic = pygame.image.load("pic .png")
 
 paddle = pygame.image.load("paddle.png")
@@ -126,25 +129,19 @@ while game_loop is True:
                             poop = False
                             for_the_other_one = True
                         if balls == 1:
-                            if for_the_other_one is False:
-                                if balls == 1:
-                                    while another_game_loop is True:
-                                        balls == 0
-                                        screen.blit(background1, (0,0))
-                                        pygame.display.update()
+                            screen.blit(game_over_screen, (0,0))
+                            pygame.display.update()
                                         
                                                                 
                     if basketballX2 >= paddleX:
                         if balls == 2:
                             balls == 1
                             soop = False
+                            for_the_other_one = True
                         if balls == 1:
-                            if for_the_other_one2 is False:
-                                if balls == 1:
-                                    while another_game_loop is True:
-                                        balls == 0
-                                        screen.blit(background1, (0,0))
-                                        pygame.display.update()                                 
+                            balls == 0
+                            screen.blit(game_over_screen, (0,0))
+                            pygame.display.update()                                 
 
                     if poop is True:        
                         if soll is True:
@@ -160,15 +157,22 @@ while game_loop is True:
                             basketballY2 += house_timing
                         if toll is False:
                             basketballX2 += house_timing
-                            basketballY2 -= house_timing                      
+                            basketballY2 -= house_timing
+                            
+                    if soop is False:
+                        balls = 1
 
-                         
-                    screen.blit(background2, (0,0))
 
-                    screen.blit(paddle, (1350,paddleY))
-                    if poop is True:
+                    print(balls)
+
+                    if soop or poop is True:
+                        screen.blit(background2, (0,0))
+
+                    if soop or poop is True:
+                        screen.blit(paddle, (1350,paddleY))
+                    if poop or soop is True:
                         screen.blit(basketball, (basketballX,basketballY))
-                    if soop is True:
+                    if soop or poop is True:
                         screen.blit(basketball2, (basketballX2,basketballY2))
 
                     pygame.display.update()

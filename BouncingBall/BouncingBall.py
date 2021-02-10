@@ -123,21 +123,23 @@ while game_loop is True:
                 print ('E')
                 while game_loop is True:
 
-                    if basketballX >= paddleX:
+                    if basketballX >= 1500:
                         if balls == 2:
                             balls == 1
                             poop = False
                             for_the_other_one = True
+                    if basketballX2 >= paddleX:
                         if balls == 1:
                             screen.blit(game_over_screen, (0,0))
                             pygame.display.update()
                                         
                                                                 
-                    if basketballX2 >= paddleX:
+                    if basketballX2 >= 1500:
                         if balls == 2:
                             balls == 1
                             soop = False
                             for_the_other_one = True
+                    if basketballX2 >= paddleX:
                         if balls == 1:
                             balls == 0
                             screen.blit(game_over_screen, (0,0))
@@ -162,8 +164,6 @@ while game_loop is True:
                     if soop is False:
                         balls = 1
 
-
-                    print(balls)
 
                     if soop or poop is True:
                         screen.blit(background2, (0,0))

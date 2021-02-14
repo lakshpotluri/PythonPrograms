@@ -31,7 +31,7 @@ while tort is True:
     while neter is True:
         backdrop = pygame.image.load('backdrop.jpg')
         mixer.music.load('AmadeusLegendary.mp3')
-        mixer.music.play(-1)
+        mixer.music.play(90)
         screen.blit(backdrop,(0,0))
 
         background = pygame.image.load('background.jpg')

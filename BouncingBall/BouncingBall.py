@@ -15,7 +15,7 @@ screen = pygame.display.set_mode((1500, 800))
 
 #engine = pygame.display.set_mode((screensize))
 
-house_timing = 5
+house_timing = 1
 
 grey = (255)
 

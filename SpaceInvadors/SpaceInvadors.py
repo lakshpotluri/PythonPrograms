@@ -176,16 +176,15 @@ while tort is True:
                         #enemy movement
                         for i in range(num_of_enemies):
                             if enemyY[i] > 440:
-                                #white = (255,255,255)
+                                
+                                white = (255,255,255)
           
-                                #mouse = True
+                                screen.fill(white)
                                 tort = False
-                                hehehe_you_lost()
                                 pygame.display.update()
                                 for l in range(num_of_enemies):
                                     enemyY[l] = 2000
                                 got()
-                                hehehe_you_lost()
                                 neter = False
                                 tort = False
                                 

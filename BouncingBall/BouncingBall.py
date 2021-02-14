@@ -100,7 +100,11 @@ polly = True
 
 another_game_loop = True
 
+mixer.music.load('EOTT.ogg')
+mixer.music.play(-1)
+    
 while game_loop is True:
+
     screen.blit(background1, (0,0))
     screen.blit(easy_button, (200,600))
     #pygame.draw.rect(screen,grey,(945,45,390,477))
@@ -122,7 +126,8 @@ while game_loop is True:
             if event.key == pygame.K_e:    
                 print ('E')
                 while game_loop is True:
-
+                    
+            
                     if basketballX >= 1500:
                         if balls == 2:
                             balls == 1
@@ -152,6 +157,9 @@ while game_loop is True:
                     if paddleY < basketballY + 32 and paddleY + 116 >= basketballY + 32:
                         if basketballX == paddleX:
                             print('ok')
+                    if paddleY + 116 < basketballY + 32 and paddleY + 232 >= basketballY + 32:
+                        if basketballX == paddleX:
+                            print('ok')
                             
 
 
@@ -159,9 +167,10 @@ while game_loop is True:
 
                     if paddleY < basketballY2 + 32 and paddleY + 116 >= basketballY2 + 32:
                         if basketballX2 == paddleX:
+                            print('ok')                        
+                    if paddleY + 116 < basketballY2 + 32 and paddleY + 232 >= basketballY2 + 32:
+                        if basketballX2 == paddleX:
                             print('yeah!!!')
-                        
-
 
                     
                     if poop is True:        
@@ -235,7 +244,52 @@ while game_loop is True:
             if event.key == pygame.K_i:
                 print ('I')
                 while game_loop is True:
+                    
 
+                    if basketballX >= 1500:
+                        if balls == 2:
+                            balls == 1
+                            poop = False
+                            for_the_other_one = True
+                    if basketballX2 >= paddleX:
+                        if balls == 1:
+                            screen.blit(game_over_screen, (0,0))
+                            pygame.display.update()
+                                        
+                                                                
+                    if basketballX2 >= 1500:
+                        if balls == 2:
+                            balls == 1
+                            soop = False
+                            for_the_other_one = True
+                    if basketballX2 >= paddleX:
+                        if balls == 1:
+                            balls == 0
+                            screen.blit(game_over_screen, (0,0))
+                            pygame.display.update()    
+
+
+                #detects paddle and ball touch
+
+
+                    if paddleY < basketballY + 32 and paddleY + 116 >= basketballY + 32:
+                        if basketballX == paddleX:
+                            print('ok')
+                    if paddleY + 116 < basketballY + 32 and paddleY + 232 >= basketballY + 32:
+                        if basketballX == paddleX:
+                            print('ok')
+                            
+
+
+                #detects paddle and ball2 touch
+
+                    if paddleY < basketballY2 + 32 and paddleY + 116 >= basketballY2 + 32:
+                        if basketballX2 == paddleX:
+                            print('ok')                        
+                    if paddleY + 116 < basketballY2 + 32 and paddleY + 232 >= basketballY2 + 32:
+                        if basketballX2 == paddleX:
+                            print('yeah!!!')
+                    
                     if soll is True:
                         basketballX += house_timing
                         basketballY += house_timing
@@ -308,6 +362,52 @@ while game_loop is True:
                 print ('P')
                 while game_loop is True:
 
+                    if basketballX >= 1500:
+                        if balls == 2:
+                            balls == 1
+                            poop = False
+                            for_the_other_one = True
+                    if basketballX2 >= paddleX:
+                        if balls == 1:
+                            screen.blit(game_over_screen, (0,0))
+                            pygame.display.update()
+                                        
+                                                                
+                    if basketballX2 >= 1500:
+                        if balls == 2:
+                            balls == 1
+                            soop = False
+                            for_the_other_one = True
+                    if basketballX2 >= paddleX:
+                        if balls == 1:
+                            balls == 0
+                            screen.blit(game_over_screen, (0,0))
+                            pygame.display.update()
+
+
+                #detects paddle and ball touch
+
+
+                    if paddleY < basketballY + 32 and paddleY + 116 >= basketballY + 32:
+                        if basketballX == paddleX:
+                            print('ok')
+                    if paddleY + 116 < basketballY + 32 and paddleY + 232 >= basketballY + 32:
+                        if basketballX == paddleX:
+                            print('ok')
+                            
+
+
+                #detects paddle and ball2 touch
+
+                    if paddleY < basketballY2 + 32 and paddleY + 116 >= basketballY2 + 32:
+                        if basketballX2 == paddleX:
+                            print('ok')                        
+                    if paddleY + 116 < basketballY2 + 32 and paddleY + 232 >= basketballY2 + 32:
+                        if basketballX2 == paddleX:
+                            print('yeah!!!')
+
+
+                            
                     if soll is True:
                         basketballX += house_timing
                         basketballY += house_timing

@@ -245,7 +245,7 @@ while game_loop is True:
                 print ('I')
                 while game_loop is True:
                     
-
+            
                     if basketballX >= 1500:
                         if balls == 2:
                             balls == 1
@@ -266,7 +266,7 @@ while game_loop is True:
                         if balls == 1:
                             balls == 0
                             screen.blit(game_over_screen, (0,0))
-                            pygame.display.update()    
+                            pygame.display.update()                                 
 
 
                 #detects paddle and ball touch
@@ -289,23 +289,40 @@ while game_loop is True:
                     if paddleY + 116 < basketballY2 + 32 and paddleY + 232 >= basketballY2 + 32:
                         if basketballX2 == paddleX:
                             print('yeah!!!')
+
                     
-                    if soll is True:
-                        basketballX += house_timing
-                        basketballY += house_timing
-                    if soll is False:
-                        basketballX += house_timing
-                        basketballY -= house_timing
+                    if poop is True:        
+                        if soll is True:
+                            basketballX += house_timing
+                            basketballY += house_timing
+                        if soll is False:
+                            basketballX += house_timing
+                            basketballY -= house_timing
 
-                    if toll is True:
-                        basketballX2 += house_timing
-                        basketballY2 += house_timing
-                    if toll is False:
-                        basketballX2 += house_timing
-                        basketballY2 -= house_timing
+                    if soop is True:   
+                        if toll is True:
+                            basketballX2 += house_timing
+                            basketballY2 += house_timing
+                        if toll is False:
+                            basketballX2 += house_timing
+                            basketballY2 -= house_timing
+                            
+                    if soop is False:
+                        balls = 1
 
 
-                    screen.blit(background2, (0,0))
+                    if soop or poop is True:
+                        screen.blit(background2, (0,0))
+
+                    if soop or poop is True:
+                        screen.blit(paddle, (1350,paddleY))
+                    if poop or soop is True:
+                        screen.blit(basketball, (basketballX,basketballY))
+                    if soop or poop is True:
+                        screen.blit(basketball2, (basketballX2,basketballY2))
+
+                    pygame.display.update()
+                     
                     paddleY += paddleYC
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
@@ -319,49 +336,34 @@ while game_loop is True:
                         if event.type == pygame.QUIT:
                             pygame.quit()
                             sys.exit()
-
                             
+                            
+                                 
                     if paddleY < 51:
                         paddleY = 51
                     if paddleY > 510:
                         paddleY = 510
 
-                        
-                    if paddleX == basketballX2 + 64:
-                        if paddleY < basketballY2 + 64 < paddleY + 116:
-                            while game_loop is True:
-                                basketballY2 -= house_timing
-                                basketballX2 -= house_timing
-                    if paddleX == basketballX + 64:
-                        if paddleY < basketballY + 64 < paddleY + 116:
-                            while game_loop is True:
-                                basketballY -= house_timing
-                                basketballX -= house_timing                        
+                         
                     if basketballY < 51:
                         basketballY = 51
                         soll = True
                     if basketballY > 650:
                         basketballY = 650
                         soll = False
-
+                         
                     if basketballY2 < 51:
                         basketballY2 = 51
                         toll = True
                     if basketballY2 > 650:
                         basketballY2 = 650
-                        toll = False
-                        
-                        
-                    screen.blit(basketball, (basketballX,basketballY))
-                    screen.blit(basketball2, (basketballX2,basketballY2))
-                    screen.blit(paddle, (1350,paddleY))            
-                    pygame.display.update()
-
+                        toll = False           
                     
             if event.key == pygame.K_p:
                 print ('P')
                 while game_loop is True:
-
+                    
+            
                     if basketballX >= 1500:
                         if balls == 2:
                             balls == 1
@@ -382,7 +384,7 @@ while game_loop is True:
                         if balls == 1:
                             balls == 0
                             screen.blit(game_over_screen, (0,0))
-                            pygame.display.update()
+                            pygame.display.update()                                 
 
 
                 #detects paddle and ball touch
@@ -406,24 +408,39 @@ while game_loop is True:
                         if basketballX2 == paddleX:
                             print('yeah!!!')
 
+                    
+                    if poop is True:        
+                        if soll is True:
+                            basketballX += house_timing
+                            basketballY += house_timing
+                        if soll is False:
+                            basketballX += house_timing
+                            basketballY -= house_timing
 
+                    if soop is True:   
+                        if toll is True:
+                            basketballX2 += house_timing
+                            basketballY2 += house_timing
+                        if toll is False:
+                            basketballX2 += house_timing
+                            basketballY2 -= house_timing
                             
-                    if soll is True:
-                        basketballX += house_timing
-                        basketballY += house_timing
-                    if soll is False:
-                        basketballX += house_timing
-                        basketballY -= house_timing
+                    if soop is False:
+                        balls = 1
 
 
-                    if toll is True:
-                        basketballX2 += house_timing
-                        basketballY2 += house_timing
-                    if toll is False:
-                        basketballX2 += house_timing
-                        basketballY2 -= house_timing
+                    if soop or poop is True:
+                        screen.blit(background2, (0,0))
 
-                    screen.blit(background2, (0,0))
+                    if soop or poop is True:
+                        screen.blit(paddle, (1350,paddleY))
+                    if poop or soop is True:
+                        screen.blit(basketball, (basketballX,basketballY))
+                    if soop or poop is True:
+                        screen.blit(basketball2, (basketballX2,basketballY2))
+
+                    pygame.display.update()
+                     
                     paddleY += paddleYC
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
@@ -433,45 +450,32 @@ while game_loop is True:
                                 paddleYC = house_timing
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
-                                paddleYC = 0                    
+                                paddleYC = 0
                         if event.type == pygame.QUIT:
                             pygame.quit()
                             sys.exit()
                             
+                            
+                                 
                     if paddleY < 51:
                         paddleY = 51
                     if paddleY > 510:
                         paddleY = 510
 
-                        
+                         
                     if basketballY < 51:
                         basketballY = 51
                         soll = True
                     if basketballY > 650:
                         basketballY = 650
                         soll = False
-
+                         
                     if basketballY2 < 51:
                         basketballY2 = 51
                         toll = True
                     if basketballY2 > 650:
                         basketballY2 = 650
-                        toll = False
-                        
-                    if paddleX == basketballX2 + 64:
-                        if paddleY < basketballY2 + 64 < paddleY + 116:
-                            while game_loop is True:
-                                basketballY2 -= house_timing
-                                basketballX2 -= house_timing                        
-                    if paddleX == basketballX + 64:
-                        if paddleY < basketballY + 64 < paddleY + 116:
-                            while game_loop is True:
-                                basketballY -= house_timing
-                                basketballX -= house_timing                        
-                    screen.blit(basketball, (basketballX,basketballY))
-                    screen.blit(basketball2, (basketballX2,basketballY2))                   
-                    screen.blit(paddle, (1350,paddleY))                    
-                    pygame.display.update()
+                        toll = False           
                 
 
 

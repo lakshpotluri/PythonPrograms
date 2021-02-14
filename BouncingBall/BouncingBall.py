@@ -145,6 +145,25 @@ while game_loop is True:
                             screen.blit(game_over_screen, (0,0))
                             pygame.display.update()                                 
 
+
+                #detects paddle and ball touch
+
+
+                    if paddleY < basketballY + 32 and paddleY + 116 >= basketballY + 32:
+                        if basketballX == paddleX:
+                            print('ok')
+                            
+
+
+                #detects paddle and ball2 touch
+
+                    if paddleY < basketballY2 + 32 and paddleY + 116 >= basketballY2 + 32:
+                        if basketballX2 == paddleX:
+                            print('yeah!!!')
+                        
+
+
+                    
                     if poop is True:        
                         if soll is True:
                             basketballX += house_timing

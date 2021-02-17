@@ -154,10 +154,10 @@ while game_loop is True:
                 #detects paddle and ball touch
 
 
-                    if paddleY < basketballY + 32 and paddleY + 116 >= basketballY + 32:
+                    if paddleY < basketballY + 51 and paddleY + 116 >= basketballY + 51:
                         if basketballX == paddleX:
                             print('ok')
-                    if paddleY + 116 < basketballY + 32 and paddleY + 232 >= basketballY + 32:
+                    if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX == paddleX:
                             print('ok')
                             
@@ -165,10 +165,10 @@ while game_loop is True:
 
                 #detects paddle and ball2 touch
 
-                    if paddleY < basketballY2 + 32 and paddleY + 116 >= basketballY2 + 32:
+                    if paddleY < basketballY2 + 51 and paddleY + 116 >= basketballY2 + 51:
                         if basketballX2 == paddleX:
                             print('ok')                        
-                    if paddleY + 116 < basketballY2 + 32 and paddleY + 232 >= basketballY2 + 32:
+                    if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 == paddleX:
                             print('yeah!!!')
 
@@ -283,10 +283,10 @@ while game_loop is True:
 
                 #detects paddle and ball2 touch
 
-                    if paddleY < basketballY2 + 32 and paddleY + 116 >= basketballY2 + 32:
+                    if paddleY < basketballY2 + 51 and paddleY + 116 >= basketballY2 + 51:
                         if basketballX2 == paddleX:
                             print('ok')                        
-                    if paddleY + 116 < basketballY2 + 32 and paddleY + 232 >= basketballY2 + 32:
+                    if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 == paddleX:
                             print('yeah!!!')
 
@@ -390,10 +390,10 @@ while game_loop is True:
                 #detects paddle and ball touch
 
 
-                    if paddleY < basketballY + 32 and paddleY + 116 >= basketballY + 32:
+                    if paddleY < basketballY + 51 and paddleY + 116 >= basketballY + 51:
                         if basketballX == paddleX:
                             print('ok')
-                    if paddleY + 116 < basketballY + 32 and paddleY + 232 >= basketballY + 32:
+                    if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX == paddleX:
                             print('ok')
                             
@@ -401,10 +401,10 @@ while game_loop is True:
 
                 #detects paddle and ball2 touch
 
-                    if paddleY < basketballY2 + 32 and paddleY + 116 >= basketballY2 + 32:
+                    if paddleY < basketballY2 + 51 and paddleY + 116 >= basketballY2 + 51:
                         if basketballX2 == paddleX:
                             print('ok')                        
-                    if paddleY + 116 < basketballY2 + 32 and paddleY + 232 >= basketballY2 + 32:
+                    if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 == paddleX:
                             print('yeah!!!')
 

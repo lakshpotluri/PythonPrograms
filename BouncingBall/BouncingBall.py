@@ -15,9 +15,7 @@ screen = pygame.display.set_mode((1500, 800))
 
 #engine = pygame.display.set_mode((screensize))
 
-house_timing = 1.3
-house_timing2 = 1.8
-
+house_timing = 1
 
 grey = (255)
 
@@ -295,19 +293,19 @@ while game_loop is True:
                     
                     if poop is True:        
                         if soll is True:
-                            basketballX += house_timing2
-                            basketballY += house_timing2
+                            basketballX += house_timing
+                            basketballY += house_timing
                         if soll is False:
-                            basketballX += house_timing2
-                            basketballY -= house_timing2
+                            basketballX += house_timing
+                            basketballY -= house_timing
 
                     if soop is True:   
                         if toll is True:
-                            basketballX2 += house_timing2
-                            basketballY2 += house_timing2
+                            basketballX2 += house_timing
+                            basketballY2 += house_timing
                         if toll is False:
-                            basketballX2 += house_timing2
-                            basketballY2 -= house_timing2
+                            basketballX2 += house_timing
+                            basketballY2 -= house_timing
                             
                     if soop is False:
                         balls = 1
@@ -413,19 +411,19 @@ while game_loop is True:
                     
                     if poop is True:        
                         if soll is True:
-                            basketballX += house_timing2
-                            basketballY += house_timing2
+                            basketballX += house_timing
+                            basketballY += house_timing
                         if soll is False:
-                            basketballX += house_timing2
-                            basketballY -= house_timing2
+                            basketballX += house_timing
+                            basketballY -= house_timing
 
                     if soop is True:   
                         if toll is True:
-                            basketballX2 += house_timing2
-                            basketballY2 += house_timing2
+                            basketballX2 += house_timing
+                            basketballY2 += house_timing
                         if toll is False:
-                            basketballX2 += house_timing2
-                            basketballY2 -= house_timing2
+                            basketballX2 += house_timing
+                            basketballY2 -= house_timing
                             
                     if soop is False:
                         balls = 1
@@ -447,9 +445,9 @@ while game_loop is True:
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
-                                paddleYC = -0.8
+                                paddleYC = -house_timing
                             if event.key == pygame.K_DOWN:
-                                paddleYC = 0.8
+                                paddleYC = house_timing
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0

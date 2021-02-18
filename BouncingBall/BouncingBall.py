@@ -73,7 +73,7 @@ def sl():
     ycj = controls3.render(rrj,True,(grey,grey,grey))
     screen.blit(ycj,(1065,700))
 
-lscreen = random.randint(1,2)
+lscreen = random.randint(1,200)
 
 efjewjkpwefipfej = pygame.font.Font('DS.otf',110)
 fe = '''Welcome to Bouncing Ball'''
@@ -119,9 +119,9 @@ while game_loop is True:
     screen.blit(proffesional_button, (1220,600))
     pygame.display.update()
 
-    if lscreen == 1:
+    if lscreen >= 0 and lscreen <= 100:
         screen.blit(background1, (0,0))
-    if lscreen == 2:
+    if lscreen <=200 and lscreen >= 100:
         screen.blit(background12, (0,0))
         dS()
         opefjigwqjIup()

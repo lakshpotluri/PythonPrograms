@@ -3,6 +3,7 @@ from pygame import mixer
 import math
 import sys
 import ctypes
+import random
 
 user32 = ctypes.windll.user32
 screensize = user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)
@@ -25,6 +26,8 @@ pygame.display.set_icon(icon)
 pygame.display.set_caption(":Bouncy-Ball!:")
 
 background1 = pygame.image.load("background1.png")
+
+background12 = pygame.image.load("background12.png")
 
 background2 = pygame.image.load("background2.jpg")
 
@@ -70,6 +73,7 @@ def sl():
     ycj = controls3.render(rrj,True,(grey,grey,grey))
     screen.blit(ycj,(1065,700))
 
+lscreen = random.randint(1,2)
 
 efjewjkpwefipfej = pygame.font.Font('DS.otf',110)
 fe = '''Welcome to Bouncing Ball'''
@@ -105,19 +109,26 @@ mixer.music.play(-1)
     
 while game_loop is True:
 
-    screen.blit(background1, (0,0))
-    screen.blit(easy_button, (200,600))
     #pygame.draw.rect(screen,grey,(945,45,390,477))
     sr()
     ss()
     #screen.blit(pic, (950 ,50)) 
     sl()
-    dS()
-    opefjigwqjIup()
+    screen.blit(easy_button, (200,600))
+    screen.blit(intermediate_button, (660,600))
+    screen.blit(proffesional_button, (1220,600))
+    pygame.display.update()
+
+    if lscreen == 1:
+        screen.blit(background1, (0,0))
+    if lscreen == 2:
+        screen.blit(background12, (0,0))
+        dS()
+        opefjigwqjIup()
     
     toll = False
     soll = True    
-
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -126,7 +137,6 @@ while game_loop is True:
             if event.key == pygame.K_e:    
                 print ('E')
                 while game_loop is True:
-                    
             
                     if basketballX >= 1500:
                         if balls == 2:
@@ -480,11 +490,14 @@ while game_loop is True:
 
 
 
-
-    
+    #pygame.draw.rect(screen,grey,(945,45,390,477))
+    sr()
+    ss()
+    #screen.blit(pic, (950 ,50)) 
+    sl()
+    screen.blit(easy_button, (200,600))
     screen.blit(intermediate_button, (660,600))
     screen.blit(proffesional_button, (1220,600))
-    pygame.display.update()
     
         
     

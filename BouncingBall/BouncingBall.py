@@ -29,6 +29,8 @@ background1 = pygame.image.load("background1.png")
 
 background12 = pygame.image.load("background12.png")
 
+background3 = pygame.image.load("background3.png")
+
 background2 = pygame.image.load("background2.jpg")
 
 game_over_screen = pygame.image.load("game_over.jpg")
@@ -73,7 +75,7 @@ def sl():
     ycj = controls3.render(rrj,True,(grey,grey,grey))
     screen.blit(ycj,(1065,700))
 
-lscreen = random.randint(1,200)
+lscreen = random.randint(1,300)
 
 efjewjkpwefipfej = pygame.font.Font('DS.otf',110)
 fe = '''Welcome to Bouncing Ball'''
@@ -104,12 +106,16 @@ polly = True
 
 false = False
 true = True
+palse = False
+prue = True
 
 another_game_loop = True
 
 mixer.music.load('EOTT.ogg')
 mixer.music.play(-1)
-    
+
+print(lscreen)
+
 while game_loop is True:
 
     #pygame.draw.rect(screen,grey,(945,45,390,477))
@@ -124,10 +130,16 @@ while game_loop is True:
 
     if lscreen >= 0 and lscreen <= 100:
         screen.blit(background1, (0,0))
-    if lscreen <=200 and lscreen >= 100:
+    if lscreen >= 200 and lscreen <= 301:
+        screen.blit(background3, (0,0))
+    if lscreen <= 201 and lscreen >= 99:
         screen.blit(background12, (0,0))
         dS()
         opefjigwqjIup()
+    if lscreen >= 300:
+        screen.blit(background12, (0,0))        
+        dS()
+        opefjigwqjIup()        
     
     toll = False
     soll = True    
@@ -156,38 +168,40 @@ while game_loop is True:
                         if balls == 2:
                             balls == 1
                             soop = False
-                            for_the_other_one = True
-                    if basketballX2 >= paddleX:
-                        if balls == 1:
-                            balls == 0
-                            screen.blit(game_over_screen, (0,0))
-                            pygame.display.update()                                 
+                            for_the_other_one2 = True
+                    if for_the_other_one2 is False:
+                        if basketballX2 >= paddleX:
+                            if balls == 1:
+                                balls == 0
+                                screen.blit(game_over_screen, (0,0))
+                                pygame.display.update()                                 
 
 
                 #detects paddle and ball touch
 
 
                     if paddleY < basketballY + 51 and paddleY + 116 >= basketballY + 51:
-                        if basketballX == paddleX:
+                        if basketballX + 51 == paddleX:
                             #print('ok')
                             false = True
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
-                        if basketballX == paddleX:
-                            #print('ok')
-                            false = True
+                        if basketballX + 51 == paddleX:
+                            print('ok')
+                            palse = True
+                            
                             
 
 
                 #detects paddle and ball2 touch
 
                     if paddleY < basketballY2 + 51 and paddleY + 116 >= basketballY2 + 51:
-                        if basketballX2 == paddleX:
+                        if basketballX2 + 51 == paddleX:
                             #print('ok')
                             true = False
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
-                        if basketballX2 == paddleX:
-                            #print('yeah!!!')
-                            true = False
+                        if basketballX2 + 51 == paddleX:
+                            print('yeah!!!')
+                            prue = False
 
                     if false is True:
                         basketballX -= house_timing
@@ -197,6 +211,13 @@ while game_loop is True:
                         basketballX2 -= house_timing
                         basketballY2 -= house_timing
 
+                    if palse is True:
+                        basketballX -= house_timing
+                        basketballY += house_timing
+                        
+                    if prue is False:
+                        basketballX2 -= house_timing
+                        basketballY2 += house_timing
                         
                     if false is False:                        
                         if poop is True:        

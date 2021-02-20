@@ -27,6 +27,10 @@ pygame.display.set_caption(":Bouncy-Ball!:")
 
 background1 = pygame.image.load("background1.png")
 
+background4 = pygame.image.load("background4.jpg")
+
+background5 = pygame.image.load("background5.jpg")
+
 background12 = pygame.image.load("background12.png")
 
 background3 = pygame.image.load("background3.png")
@@ -75,7 +79,7 @@ def sl():
     ycj = controls3.render(rrj,True,(grey,grey,grey))
     screen.blit(ycj,(1065,700))
 
-lscreen = random.randint(1,300)
+lscreen = random.randint(1,600)
 
 efjewjkpwefipfej = pygame.font.Font('DS.otf',110)
 fe = '''Welcome to Bouncing Ball'''
@@ -132,14 +136,17 @@ while game_loop is True:
         screen.blit(background1, (0,0))
     if lscreen >= 200 and lscreen <= 301:
         screen.blit(background3, (0,0))
+    if lscreen >= 300 and lscreen <= 401:
+        screen.blit(background4, (0,0))
     if lscreen <= 201 and lscreen >= 99:
         screen.blit(background12, (0,0))
         dS()
         opefjigwqjIup()
     if lscreen >= 300:
-        screen.blit(background12, (0,0))        
+        screen.blit(background4, (0,0))        
         dS()
-        opefjigwqjIup()        
+        opefjigwqjIup()
+
     
     toll = False
     soll = True    

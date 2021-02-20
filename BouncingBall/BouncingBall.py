@@ -102,6 +102,9 @@ for_the_other_one2 = False
 lolly = True
 polly = True
 
+false = False
+true = True
+
 another_game_loop = True
 
 mixer.music.load('EOTT.ogg')
@@ -166,10 +169,12 @@ while game_loop is True:
 
                     if paddleY < basketballY + 51 and paddleY + 116 >= basketballY + 51:
                         if basketballX == paddleX:
-                            print('ok')
+                            #print('ok')
+                            false = True
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX == paddleX:
-                            print('ok')
+                            #print('ok')
+                            false = True
                             
 
 
@@ -177,28 +182,39 @@ while game_loop is True:
 
                     if paddleY < basketballY2 + 51 and paddleY + 116 >= basketballY2 + 51:
                         if basketballX2 == paddleX:
-                            print('ok')                        
+                            #print('ok')
+                            true = False
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 == paddleX:
-                            print('yeah!!!')
+                            #print('yeah!!!')
+                            true = False
 
-                    
-                    if poop is True:        
-                        if soll is True:
-                            basketballX += house_timing
-                            basketballY += house_timing
-                        if soll is False:
-                            basketballX += house_timing
-                            basketballY -= house_timing
+                    if false is True:
+                        basketballX -= house_timing
+                        basketballY -= house_timing
+                        
+                    if true is False:
+                        basketballX2 -= house_timing
+                        basketballY2 -= house_timing
 
-                    if soop is True:   
-                        if toll is True:
-                            basketballX2 += house_timing
-                            basketballY2 += house_timing
-                        if toll is False:
-                            basketballX2 += house_timing
-                            basketballY2 -= house_timing
-                            
+                        
+                    if false is False:                        
+                        if poop is True:        
+                            if soll is True:
+                                basketballX += house_timing
+                                basketballY += house_timing
+                            if soll is False:
+                                basketballX += house_timing
+                                basketballY -= house_timing
+                    if true is True:
+                        if soop is True:   
+                            if toll is True:
+                                basketballX2 += house_timing
+                                basketballY2 += house_timing
+                            if toll is False:
+                                basketballX2 += house_timing
+                                basketballY2 -= house_timing
+                        
                     if soop is False:
                         balls = 1
 

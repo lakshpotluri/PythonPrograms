@@ -39,6 +39,8 @@ background2 = pygame.image.load("background2.jpg")
 
 game_over_screen = pygame.image.load("game_over.jpg")
 
+game2 = pygame.image.load("game2.jpg")
+
 
 pic = pygame.image.load("pic .png")
 
@@ -99,6 +101,11 @@ basketballY = 360
 basketballX2 = 0
 basketballY2 = 360
 
+lol = False
+pol = False
+
+gscreen = random.randint(1,200)
+
 poop = True
 soop = True                
 
@@ -117,6 +124,9 @@ another_game_loop = True
 
 mixer.music.load('EOTT.ogg')
 mixer.music.play(-1)
+
+kunt = False
+punt = False
 
 print(lscreen)
 
@@ -171,7 +181,10 @@ while game_loop is True:
                             for_the_other_one = True
                     if basketballX2 >= paddleX:
                         if balls == 1:
-                            screen.blit(game_over_screen, (0,0))
+                            if gscreen > 0 and gscreen < 101:                                    
+                                screen.blit(game_over_screen, (0,0))
+                            if gscreen > 100 and gscreen < 201:                                    
+                                screen.blit(game2, (0,0))
                             pygame.display.update()
                                         
                                                                 
@@ -184,7 +197,10 @@ while game_loop is True:
                         if basketballX2 >= paddleX:
                             if balls == 1:
                                 balls == 0
-                                screen.blit(game_over_screen, (0,0))
+                                if gscreen > 0 and gscreen < 101:                                    
+                                    screen.blit(game_over_screen, (0,0))
+                                if gscreen > 100 and gscreen < 201:                                    
+                                    screen.blit(game2, (0,0))
                                 pygame.display.update()                                 
 
 
@@ -195,6 +211,7 @@ while game_loop is True:
                         if basketballX + 51 == paddleX:
                             #print('ok')
                             false = True
+                            lol = True                            
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
                             print('ok')
@@ -209,11 +226,31 @@ while game_loop is True:
                         if basketballX2 + 51 == paddleX:
                             #print('ok')
                             true = False
+                            pol = True
+
+                            
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             print('yeah!!!')
                             prue = False
 
+                    if lol is True:
+                        #print('dkjdahf')
+                        if basketballY - 4 < 51:
+                            #print('kdsjfh')
+                            kunt = True
+                            
+                    if pol is True:
+                        if basketballY2 - 4 < 51:
+                            #print('dkjdahf')
+                            punt = True
+
+                    if kunt is True:
+                        basketballY + house_timing
+                    if punt is True:
+                        basketballY2 + house_timing
+ 
+                        
                     if false is True:
                         basketballX -= house_timing
                         basketballY -= house_timing
@@ -222,13 +259,7 @@ while game_loop is True:
                         basketballX2 -= house_timing
                         basketballY2 -= house_timing
 
-                    if palse is True:
-                        basketballX -= house_timing
-                        basketballY += house_timing
-                        
-                    if prue is False:
-                        basketballX2 -= house_timing
-                        basketballY2 += house_timing
+
                         
                     if false is False:                        
                         if poop is True:        

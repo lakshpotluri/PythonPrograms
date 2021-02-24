@@ -120,10 +120,17 @@ true = True
 palse = False
 prue = True
 
+cmon = False
+lmon = False
+
+
 another_game_loop = True
 
 mixer.music.load('EOTT.ogg')
 mixer.music.play(-1)
+
+kulja = False
+sim_sim = False
 
 kunt = False
 punt = False
@@ -178,9 +185,11 @@ while game_loop is True:
                         if balls == 2:
                             balls == 1
                             poop = False
+                            cmon = True
                             for_the_other_one = True
                     if basketballX2 >= paddleX:
                         if balls == 1:
+                            cmon = True
                             if gscreen > 0 and gscreen < 101:                                    
                                 screen.blit(game_over_screen, (0,0))
                             if gscreen > 100 and gscreen < 201:                                    
@@ -192,10 +201,12 @@ while game_loop is True:
                         if balls == 2:
                             balls == 1
                             soop = False
+                            lmon = True
                             for_the_other_one2 = True
                     if for_the_other_one2 is False:
                         if basketballX2 >= paddleX:
                             if balls == 1:
+                                lmon = True
                                 balls == 0
                                 if gscreen > 0 and gscreen < 101:                                    
                                     screen.blit(game_over_screen, (0,0))
@@ -226,38 +237,32 @@ while game_loop is True:
                         if basketballX2 + 51 == paddleX:
                             #print('ok')
                             true = False
-                            pol = True
-
-                            
+                            pol = True                            
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             print('yeah!!!')
                             prue = False
 
-                    if lol is True:
-                        #print('dkjdahf')
-                        if basketballY - 4 < 51:
-                            #print('kdsjfh')
-                            kunt = True
                             
-                    if pol is True:
-                        if basketballY2 - 4 < 51:
-                            #print('dkjdahf')
-                            punt = True
 
-                    if kunt is True:
+                    if kulja is True:
+                        print('huh')
                         basketballY + house_timing
-                    if punt is True:
+                    if sim_sim is True:
+                        print('yuh')
                         basketballY2 + house_timing
+
  
                         
                     if false is True:
                         basketballX -= house_timing
-                        basketballY -= house_timing
+                        if kulja is False:
+                            basketballY -= house_timing
                         
                     if true is False:
                         basketballX2 -= house_timing
-                        basketballY2 -= house_timing
+                        if sim_sim is False:
+                            basketballY2 -= house_timing
 
 
                         
@@ -277,11 +282,20 @@ while game_loop is True:
                             if toll is False:
                                 basketballX2 += house_timing
                                 basketballY2 -= house_timing
-                        
-                    if soop is False:
-                        balls = 1
 
+                    if false is True:
+                        if basketballY < 51:
+                            kulja = True
+                    if true is False:
+                        if basketballY2 < 51:
+                            sim_sim = True
 
+                            
+                    if cmon and lmon is True:
+                        if gscreen > 0 and gscreen < 101:                                    
+                            screen.blit(game_over_screen, (0,0))
+                        if gscreen > 100 and gscreen < 201:                                    
+                            screen.blit(game2, (0,0))                        
                     if soop or poop is True:
                         screen.blit(background2, (0,0))
 

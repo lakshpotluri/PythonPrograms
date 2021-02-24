@@ -135,6 +135,9 @@ sim_sim = False
 kunt = False
 punt = False
 
+sutu = False
+putu = False
+
 print(lscreen)
 
 while game_loop is True:
@@ -168,7 +171,7 @@ while game_loop is True:
         dS()
         opefjigwqjIup()
 
-    
+        
     toll = False
     soll = True    
     
@@ -246,10 +249,8 @@ while game_loop is True:
                             
 
                     if kulja is True:
-                        print('huh')
                         basketballY + house_timing
                     if sim_sim is True:
-                        print('yuh')
                         basketballY2 + house_timing
 
  
@@ -284,10 +285,10 @@ while game_loop is True:
                                 basketballY2 -= house_timing
 
                     if false is True:
-                        if basketballY < 51:
+                        if basketballY - 4 < 51:
                             kulja = True
                     if true is False:
-                        if basketballY2 < 51:
+                        if basketballY2 - 4 < 51:
                             sim_sim = True
 
                             
@@ -347,16 +348,19 @@ while game_loop is True:
             if event.key == pygame.K_i:
                 print ('I')
                 while game_loop is True:
-                    
-            
                     if basketballX >= 1500:
                         if balls == 2:
                             balls == 1
                             poop = False
+                            cmon = True
                             for_the_other_one = True
                     if basketballX2 >= paddleX:
                         if balls == 1:
-                            screen.blit(game_over_screen, (0,0))
+                            cmon = True
+                            if gscreen > 0 and gscreen < 101:                                    
+                                screen.blit(game_over_screen, (0,0))
+                            if gscreen > 100 and gscreen < 201:                                    
+                                screen.blit(game2, (0,0))
                             pygame.display.update()
                                         
                                                                 
@@ -364,174 +368,264 @@ while game_loop is True:
                         if balls == 2:
                             balls == 1
                             soop = False
-                            for_the_other_one = True
-                    if basketballX2 >= paddleX:
-                        if balls == 1:
-                            balls == 0
-                            screen.blit(game_over_screen, (0,0))
-                            pygame.display.update()                                 
-
-
-                #detects paddle and ball touch
-
-
-                    if paddleY < basketballY + 32 and paddleY + 116 >= basketballY + 32:
-                        if basketballX == paddleX:
-                            print('ok')
-                    if paddleY + 116 < basketballY + 32 and paddleY + 232 >= basketballY + 32:
-                        if basketballX == paddleX:
-                            print('ok')
-                            
-
-
-                #detects paddle and ball2 touch
-
-                    if paddleY < basketballY2 + 51 and paddleY + 116 >= basketballY2 + 51:
-                        if basketballX2 == paddleX:
-                            print('ok')                        
-                    if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
-                        if basketballX2 == paddleX:
-                            print('yeah!!!')
-
-                    
-                    if poop is True:        
-                        if soll is True:
-                            basketballX += house_timing
-                            basketballY += house_timing
-                        if soll is False:
-                            basketballX += house_timing
-                            basketballY -= house_timing
-
-                    if soop is True:   
-                        if toll is True:
-                            basketballX2 += house_timing
-                            basketballY2 += house_timing
-                        if toll is False:
-                            basketballX2 += house_timing
-                            basketballY2 -= house_timing
-                            
-                    if soop is False:
-                        balls = 1
-
-
-                    if soop or poop is True:
-                        screen.blit(background2, (0,0))
-
-                    if soop or poop is True:
-                        screen.blit(paddle, (1350,paddleY))
-                    if poop or soop is True:
-                        screen.blit(basketball, (basketballX,basketballY))
-                    if soop or poop is True:
-                        screen.blit(basketball2, (basketballX2,basketballY2))
-
-                    pygame.display.update()
-                     
-                    paddleY += paddleYC
-                    for event in pygame.event.get():
-                        if event.type == pygame.KEYDOWN:
-                            if event.key == pygame.K_UP:
-                                paddleYC = -house_timing
-                            if event.key == pygame.K_DOWN:
-                                paddleYC = house_timing
-                        if event.type == pygame.KEYUP:
-                            if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
-                                paddleYC = 0
-                        if event.type == pygame.QUIT:
-                            pygame.quit()
-                            sys.exit()
-                            
-                            
-                                 
-                    if paddleY < 51:
-                        paddleY = 51
-                    if paddleY > 510:
-                        paddleY = 510
-
-                         
-                    if basketballY < 51:
-                        basketballY = 51
-                        soll = True
-                    if basketballY > 650:
-                        basketballY = 650
-                        soll = False
-                         
-                    if basketballY2 < 51:
-                        basketballY2 = 51
-                        toll = True
-                    if basketballY2 > 650:
-                        basketballY2 = 650
-                        toll = False           
-                    
-            if event.key == pygame.K_p:
-                print ('P')
-                while game_loop is True:
-                    
-            
-                    if basketballX >= 1500:
-                        if balls == 2:
-                            balls == 1
-                            poop = False
-                            for_the_other_one = True
-                    if basketballX2 >= paddleX:
-                        if balls == 1:
-                            screen.blit(game_over_screen, (0,0))
-                            pygame.display.update()
-                                        
-                                                                
-                    if basketballX2 >= 1500:
-                        if balls == 2:
-                            balls == 1
-                            soop = False
-                            for_the_other_one = True
-                    if basketballX2 >= paddleX:
-                        if balls == 1:
-                            balls == 0
-                            screen.blit(game_over_screen, (0,0))
-                            pygame.display.update()                                 
+                            lmon = True
+                            for_the_other_one2 = True
+                    if for_the_other_one2 is False:
+                        if basketballX2 >= paddleX:
+                            if balls == 1:
+                                lmon = True
+                                balls == 0
+                                if gscreen > 0 and gscreen < 101:                                    
+                                    screen.blit(game_over_screen, (0,0))
+                                if gscreen > 100 and gscreen < 201:                                    
+                                    screen.blit(game2, (0,0))
+                                pygame.display.update()                                 
 
 
                 #detects paddle and ball touch
 
 
                     if paddleY < basketballY + 51 and paddleY + 116 >= basketballY + 51:
-                        if basketballX == paddleX:
-                            print('ok')
+                        if basketballX + 51 == paddleX:
+                            #print('ok')
+                            false = True
+                            lol = True                            
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
-                        if basketballX == paddleX:
+                        if basketballX + 51 == paddleX:
                             print('ok')
+                            palse = True
+                            
                             
 
 
                 #detects paddle and ball2 touch
 
                     if paddleY < basketballY2 + 51 and paddleY + 116 >= basketballY2 + 51:
-                        if basketballX2 == paddleX:
-                            print('ok')                        
+                        if basketballX2 + 51 == paddleX:
+                            #print('ok')
+                            true = False
+                            pol = True                            
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
-                        if basketballX2 == paddleX:
+                        if basketballX2 + 51 == paddleX:
                             print('yeah!!!')
+                            prue = False
 
-                    
-                    if poop is True:        
-                        if soll is True:
-                            basketballX += house_timing
-                            basketballY += house_timing
-                        if soll is False:
-                            basketballX += house_timing
-                            basketballY -= house_timing
-
-                    if soop is True:   
-                        if toll is True:
-                            basketballX2 += house_timing
-                            basketballY2 += house_timing
-                        if toll is False:
-                            basketballX2 += house_timing
-                            basketballY2 -= house_timing
                             
-                    if soop is False:
-                        balls = 1
+
+                    if kulja is True:
+                        basketballY + house_timing
+                    if sim_sim is True:
+                        basketballY2 + house_timing
+
+ 
+                        
+                    if false is True:
+                        basketballX -= house_timing
+                        if kulja is False:
+                            basketballY -= house_timing
+                        
+                    if true is False:
+                        basketballX2 -= house_timing
+                        if sim_sim is False:
+                            basketballY2 -= house_timing
 
 
+                        
+                    if false is False:                        
+                        if poop is True:        
+                            if soll is True:
+                                basketballX += house_timing
+                                basketballY += house_timing
+                            if soll is False:
+                                basketballX += house_timing
+                                basketballY -= house_timing
+                    if true is True:
+                        if soop is True:   
+                            if toll is True:
+                                basketballX2 += house_timing
+                                basketballY2 += house_timing
+                            if toll is False:
+                                basketballX2 += house_timing
+                                basketballY2 -= house_timing
+
+                    if false is True:
+                        if basketballY - 4 < 51:
+                            kulja = True
+                    if true is False:
+                        if basketballY2 - 4 < 51:
+                            sim_sim = True
+
+                            
+                    if cmon and lmon is True:
+                        if gscreen > 0 and gscreen < 101:                                    
+                            screen.blit(game_over_screen, (0,0))
+                        if gscreen > 100 and gscreen < 201:                                    
+                            screen.blit(game2, (0,0))                        
+                    if soop or poop is True:
+                        screen.blit(background2, (0,0))
+
+                    if soop or poop is True:
+                        screen.blit(paddle, (1350,paddleY))
+                    if poop or soop is True:
+                        screen.blit(basketball, (basketballX,basketballY))
+                    if soop or poop is True:
+                        screen.blit(basketball2, (basketballX2,basketballY2))
+
+                    pygame.display.update()
+                     
+                    paddleY += paddleYC
+                    for event in pygame.event.get():
+                        if event.type == pygame.KEYDOWN:
+                            if event.key == pygame.K_UP:
+                                paddleYC = -house_timing
+                            if event.key == pygame.K_DOWN:
+                                paddleYC = house_timing
+                        if event.type == pygame.KEYUP:
+                            if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
+                                paddleYC = 0
+                        if event.type == pygame.QUIT:
+                            pygame.quit()
+                            sys.exit()
+                            
+                            
+                                 
+                    if paddleY < 51:
+                        paddleY = 51
+                    if paddleY > 510:
+                        paddleY = 510
+
+                         
+                    if basketballY < 51:
+                        basketballY = 51
+                        soll = True
+                    if basketballY > 650:
+                        basketballY = 650
+                        soll = False
+                         
+                    if basketballY2 < 51:
+                        basketballY2 = 51
+                        toll = True
+                    if basketballY2 > 650:
+                        basketballY2 = 650
+                        toll = False               
+                    
+            if event.key == pygame.K_p:
+                print ('P')
+                while game_loop is True:
+                    
+                    if basketballX >= 1500:
+                        if balls == 2:
+                            balls == 1
+                            poop = False
+                            cmon = True
+                            for_the_other_one = True
+                    if basketballX2 >= paddleX:
+                        if balls == 1:
+                            cmon = True
+                            if gscreen > 0 and gscreen < 101:                                    
+                                screen.blit(game_over_screen, (0,0))
+                            if gscreen > 100 and gscreen < 201:                                    
+                                screen.blit(game2, (0,0))
+                            pygame.display.update()
+                                        
+                                                                
+                    if basketballX2 >= 1500:
+                        if balls == 2:
+                            balls == 1
+                            soop = False
+                            lmon = True
+                            for_the_other_one2 = True
+                    if for_the_other_one2 is False:
+                        if basketballX2 >= paddleX:
+                            if balls == 1:
+                                lmon = True
+                                balls == 0
+                                if gscreen > 0 and gscreen < 101:                                    
+                                    screen.blit(game_over_screen, (0,0))
+                                if gscreen > 100 and gscreen < 201:                                    
+                                    screen.blit(game2, (0,0))
+                                pygame.display.update()                                 
+
+
+                #detects paddle and ball touch
+
+
+                    if paddleY < basketballY + 51 and paddleY + 116 >= basketballY + 51:
+                        if basketballX + 51 == paddleX:
+                            #print('ok')
+                            false = True
+                            lol = True                            
+                    if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
+                        if basketballX + 51 == paddleX:
+                            print('ok')
+                            palse = True
+                            
+                            
+
+
+                #detects paddle and ball2 touch
+
+                    if paddleY < basketballY2 + 51 and paddleY + 116 >= basketballY2 + 51:
+                        if basketballX2 + 51 == paddleX:
+                            #print('ok')
+                            true = False
+                            pol = True                            
+                    if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
+                        if basketballX2 + 51 == paddleX:
+                            print('yeah!!!')
+                            prue = False
+
+                            
+
+                    if kulja is True:
+                        basketballY + house_timing
+                    if sim_sim is True:
+                        basketballY2 + house_timing
+
+ 
+                        
+                    if false is True:
+                        basketballX -= house_timing
+                        if kulja is False:
+                            basketballY -= house_timing
+                        
+                    if true is False:
+                        basketballX2 -= house_timing
+                        if sim_sim is False:
+                            basketballY2 -= house_timing
+
+
+                        
+                    if false is False:                        
+                        if poop is True:        
+                            if soll is True:
+                                basketballX += house_timing
+                                basketballY += house_timing
+                            if soll is False:
+                                basketballX += house_timing
+                                basketballY -= house_timing
+                    if true is True:
+                        if soop is True:   
+                            if toll is True:
+                                basketballX2 += house_timing
+                                basketballY2 += house_timing
+                            if toll is False:
+                                basketballX2 += house_timing
+                                basketballY2 -= house_timing
+
+                    if false is True:
+                        if basketballY - 4 < 51:
+                            kulja = True
+                    if true is False:
+                        if basketballY2 - 4 < 51:
+                            sim_sim = True
+
+                            
+                    if cmon and lmon is True:
+                        if gscreen > 0 and gscreen < 101:                                    
+                            screen.blit(game_over_screen, (0,0))
+                        if gscreen > 100 and gscreen < 201:                                    
+                            screen.blit(game2, (0,0))                        
                     if soop or poop is True:
                         screen.blit(background2, (0,0))
 
@@ -579,9 +673,6 @@ while game_loop is True:
                     if basketballY2 > 650:
                         basketballY2 = 650
                         toll = False           
-                
-
-
 
     #pygame.draw.rect(screen,grey,(945,45,390,477))
     sr()

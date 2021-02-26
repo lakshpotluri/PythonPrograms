@@ -229,7 +229,6 @@ while game_loop is True:
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
                             print('ok')
-                            palse = True
                             
                             
 
@@ -244,14 +243,10 @@ while game_loop is True:
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             print('yeah!!!')
-                            prue = False
 
                             
 
-                    if kulja is True:
-                        basketballY + house_timing
-                    if sim_sim is True:
-                        basketballY2 + house_timing
+
 
  
                         
@@ -259,12 +254,17 @@ while game_loop is True:
                         basketballX -= house_timing
                         if kulja is False:
                             basketballY -= house_timing
+                        if kulja is True:
+                            basketballY += house_timing
+
                         
+                            
                     if true is False:
                         basketballX2 -= house_timing
                         if sim_sim is False:
                             basketballY2 -= house_timing
-
+                        if sim_sim is True:
+                            basketballY2 += house_timing
 
                         
                     if false is False:                        
@@ -285,11 +285,17 @@ while game_loop is True:
                                 basketballY2 -= house_timing
 
                     if false is True:
-                        if basketballY - 4 < 51:
+                        if basketballY < 51:
+                            kulja = True
+                        if basketballY > 790:
                             kulja = True
                     if true is False:
-                        if basketballY2 - 4 < 51:
+                        if basketballY2 < 51:
                             sim_sim = True
+                        if basketballY2 > 790:
+                            sim_sim = True
+                            
+
 
                             
                     if cmon and lmon is True:

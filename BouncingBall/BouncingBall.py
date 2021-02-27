@@ -16,7 +16,7 @@ screen = pygame.display.set_mode((1500, 800))
 
 #engine = pygame.display.set_mode((screensize))
 
-house_timing = 1
+house_timing = 1.5
 
 grey = (255)
 
@@ -95,7 +95,7 @@ def dS():
     sdv = adf.render(fl,True,(grey,grey,grey))
     screen.blit(sdv,(50,130))
 
-basketballX = 400
+basketballX = 600
 basketballY = 360
 
 basketballX2 = 0
@@ -123,6 +123,7 @@ prue = True
 cmon = False
 lmon = False
 
+uhh = random.randint(1,2)
 
 another_game_loop = True
 
@@ -132,6 +133,8 @@ mixer.music.play(-1)
 kulja = False
 sim_sim = False
 
+prank = False
+mang = False
 
 kunt = False
 punt = False
@@ -172,10 +175,18 @@ while game_loop is True:
         dS()
         opefjigwqjIup()
 
+    if uhh == 1:    
+        toll = True
+        soll = False
+
         
-    toll = False
-    soll = True    
-    
+    if uhh == 2:    
+        toll = False
+        soll = True
+
+
+
+        
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -184,7 +195,7 @@ while game_loop is True:
             if event.key == pygame.K_e:    
                 print ('E')
                 while game_loop is True:
-            
+                    
                     if basketballX >= 1500:
                         if balls == 2:
                             balls == 1
@@ -230,6 +241,7 @@ while game_loop is True:
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
                             print('ok')
+                            false = True
                             
                             
 
@@ -244,10 +256,23 @@ while game_loop is True:
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             print('yeah!!!')
-
+                            true = False
+                            
                             
 
+                    if basketballX < 0:
+                        prank = True
+                        
+                    if basketballX2 < 1:
+                        mang = True
 
+
+
+##                    if prank is True:
+##                        false = False
+##                    
+##                    if mang is True:
+##                        true = True
 
  
                         
@@ -295,12 +320,10 @@ while game_loop is True:
                             kulja = True
                         if basketballY > 700:
                             kulja = False
-                            print('what')
                     if true is False:
                         if basketballY2 < 51:
                             sim_sim = True
                         if basketballY2 > 700:
-                            print('what')
                             sim_sim = False
                             
 
@@ -372,8 +395,9 @@ while game_loop is True:
                      
             if event.key == pygame.K_i:
                 print ('I')
+                
                 while game_loop is True:
-            
+                    
                     if basketballX >= 1500:
                         if balls == 2:
                             balls == 1
@@ -419,6 +443,7 @@ while game_loop is True:
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
                             print('ok')
+                            false = True
                             
                             
 
@@ -433,10 +458,23 @@ while game_loop is True:
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             print('yeah!!!')
-
+                            true = False
+                            
                             
 
+                    if basketballX < 0:
+                        prank = True
+                        
+                    if basketballX2 < 1:
+                        mang = True
 
+
+
+##                    if prank is True:
+##                        false = False
+##                    
+##                    if mang is True:
+##                        true = True
 
  
                         
@@ -445,16 +483,17 @@ while game_loop is True:
                         if kulja is False:
                             basketballY -= house_timing
                         if kulja is True:
-                            basketballY += house_timing
-
-                        
+                            basketballY += house_timing                     
                             
                     if true is False:
                         basketballX2 -= house_timing
                         if sim_sim is False:
-                            basketballY2 -= house_timing
-                        if sim_sim is True:
                             basketballY2 += house_timing
+                        if sim_sim is True:
+                            basketballY2 -= house_timing
+
+
+                            
 
                         
                     if false is False:                        
@@ -465,6 +504,7 @@ while game_loop is True:
                             if soll is False:
                                 basketballX += house_timing
                                 basketballY -= house_timing
+                                
                     if true is True:
                         if soop is True:   
                             if toll is True:
@@ -474,15 +514,18 @@ while game_loop is True:
                                 basketballX2 += house_timing
                                 basketballY2 -= house_timing
 
+
+                                
+
                     if false is True:
                         if basketballY < 51:
                             kulja = True
-                        if basketballY > 790:
-                            kulja = True
+                        if basketballY > 700:
+                            kulja = False
                     if true is False:
                         if basketballY2 < 51:
-                            sim_sim = True
-                        if basketballY2 > 790:
+                            sim_sim = False
+                        if basketballY2 > 700:
                             sim_sim = True
                             
 
@@ -492,10 +535,12 @@ while game_loop is True:
                         if gscreen > 0 and gscreen < 101:                                    
                             screen.blit(game_over_screen, (0,0))
                         if gscreen > 100 and gscreen < 201:                                    
-                            screen.blit(game2, (0,0))                        
+                            screen.blit(game2, (0,0))
+
+
+                            
                     if soop or poop is True:
                         screen.blit(background2, (0,0))
-
                     if soop or poop is True:
                         screen.blit(paddle, (1350,paddleY))
                     if poop or soop is True:
@@ -504,6 +549,9 @@ while game_loop is True:
                         screen.blit(basketball2, (basketballX2,basketballY2))
 
                     pygame.display.update()
+
+
+
                      
                     paddleY += paddleYC
                     for event in pygame.event.get():
@@ -525,27 +573,33 @@ while game_loop is True:
                         paddleY = 51
                     if paddleY > 510:
                         paddleY = 510
+                        
+                        
 
                          
                     if basketballY < 51:
                         basketballY = 51
                         soll = True
-                    if basketballY > 650:
-                        basketballY = 650
+                        
+                    if basketballY > 700:
+                        basketballY = 700
                         soll = False
-                         
+
+                        
                     if basketballY2 < 51:
                         basketballY2 = 51
                         toll = True
-                    if basketballY2 > 650:
-                        basketballY2 = 650
-                        toll = False      
-                    
+                        
+                    if basketballY2 > 700:
+                        basketballY2 = 700
+                        toll = False
+
+                        
             if event.key == pygame.K_p:
                 print ('P')
                 
                 while game_loop is True:
-            
+                    
                     if basketballX >= 1500:
                         if balls == 2:
                             balls == 1
@@ -591,6 +645,7 @@ while game_loop is True:
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
                             print('ok')
+                            false = True
                             
                             
 
@@ -605,10 +660,23 @@ while game_loop is True:
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             print('yeah!!!')
-
+                            true = False
+                            
                             
 
+                    if basketballX < 0:
+                        prank = True
+                        
+                    if basketballX2 < 1:
+                        mang = True
 
+
+
+##                    if prank is True:
+##                        false = False
+##                    
+##                    if mang is True:
+##                        true = True
 
  
                         
@@ -617,9 +685,7 @@ while game_loop is True:
                         if kulja is False:
                             basketballY -= house_timing
                         if kulja is True:
-                            basketballY += house_timing
-
-                        
+                            basketballY += house_timing                     
                             
                     if true is False:
                         basketballX2 -= house_timing
@@ -627,6 +693,9 @@ while game_loop is True:
                             basketballY2 -= house_timing
                         if sim_sim is True:
                             basketballY2 += house_timing
+
+
+                            
 
                         
                     if false is False:                        
@@ -637,6 +706,7 @@ while game_loop is True:
                             if soll is False:
                                 basketballX += house_timing
                                 basketballY -= house_timing
+                                
                     if true is True:
                         if soop is True:   
                             if toll is True:
@@ -646,16 +716,19 @@ while game_loop is True:
                                 basketballX2 += house_timing
                                 basketballY2 -= house_timing
 
+
+                                
+
                     if false is True:
                         if basketballY < 51:
                             kulja = True
-                        if basketballY > 790:
-                            kulja = True
+                        if basketballY > 700:
+                            kulja = False
                     if true is False:
                         if basketballY2 < 51:
                             sim_sim = True
-                        if basketballY2 > 790:
-                            sim_sim = True
+                        if basketballY2 > 700:
+                            sim_sim = False
                             
 
 
@@ -664,10 +737,12 @@ while game_loop is True:
                         if gscreen > 0 and gscreen < 101:                                    
                             screen.blit(game_over_screen, (0,0))
                         if gscreen > 100 and gscreen < 201:                                    
-                            screen.blit(game2, (0,0))                        
+                            screen.blit(game2, (0,0))
+
+
+                            
                     if soop or poop is True:
                         screen.blit(background2, (0,0))
-
                     if soop or poop is True:
                         screen.blit(paddle, (1350,paddleY))
                     if poop or soop is True:
@@ -676,6 +751,9 @@ while game_loop is True:
                         screen.blit(basketball2, (basketballX2,basketballY2))
 
                     pygame.display.update()
+
+
+
                      
                     paddleY += paddleYC
                     for event in pygame.event.get():
@@ -697,20 +775,25 @@ while game_loop is True:
                         paddleY = 51
                     if paddleY > 510:
                         paddleY = 510
+                        
+                        
 
                          
                     if basketballY < 51:
                         basketballY = 51
                         soll = True
-                    if basketballY > 650:
-                        basketballY = 650
+                        
+                    if basketballY > 700:
+                        basketballY = 700
                         soll = False
-                         
+
+                        
                     if basketballY2 < 51:
                         basketballY2 = 51
                         toll = True
-                    if basketballY2 > 650:
-                        basketballY2 = 650
+                        
+                    if basketballY2 > 700:
+                        basketballY2 = 700
                         toll = False
 
 

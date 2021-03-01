@@ -98,7 +98,7 @@ def dS():
 basketballX = 600
 basketballY = 360
 
-basketballX2 = 0
+basketballX2 = 51
 basketballY2 = 360
 
 lol = False
@@ -258,21 +258,22 @@ while game_loop is True:
                             print('yeah!!!')
                             true = False
                             
-                            
+                    prank = False
+                    mang = False
 
-                    if basketballX < 0:
+                    if basketballX < 51:
                         prank = True
                         
-                    if basketballX2 < 1:
+                    if basketballX2 < 51:
                         mang = True
 
 
-
-##                    if prank is True:
-##                        false = False
-##                    
-##                    if mang is True:
-##                        true = True
+                    if prank is True:
+                        false = False
+                        lol = False
+                    if mang is True:
+                        true = True
+                        pol = False
 
  
                         

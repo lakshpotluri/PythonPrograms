@@ -258,8 +258,10 @@ while game_loop is True:
                             print('yeah!!!')
                             true = False
                             
-                    prank = False
-                    mang = False
+                    if prank is True:
+                        prank = False
+                    if mang is True:
+                        mang = False                        
 
                     if basketballX < 51:
                         prank = True

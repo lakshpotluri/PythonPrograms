@@ -63,6 +63,10 @@ paddleYC = 0
 
 balls = 2
 
+bouce = mixer.Sound('BASKETBL.wav')
+impact = mixer.Sound('at_last.mp3')
+
+
 controls2 = pygame.font.Font('DS.otf',60)
 rrr = '''Press 'E' for Easy level '''
 def sr():
@@ -236,11 +240,13 @@ while game_loop is True:
                     if paddleY < basketballY + 51 and paddleY + 116 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
                             #print('ok')
+                            impact.play()
                             false = True
                             lol = True                            
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
                             print('ok')
+                            impact.play()
                             false = True
                             
                             
@@ -251,11 +257,13 @@ while game_loop is True:
                     if paddleY < basketballY2 + 51 and paddleY + 116 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             #print('ok')
+                            impact.play()
                             true = False
                             pol = True                            
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             print('yeah!!!')
+                            impact.play()
                             true = False
                             
                     if prank is True:
@@ -379,19 +387,23 @@ while game_loop is True:
 
                          
                     if basketballY < 51:
+                        bouce.play()
                         basketballY = 51
                         soll = True
                         
                     if basketballY > 700:
+                        bouce.play()
                         basketballY = 700
                         soll = False
 
                         
                     if basketballY2 < 51:
+                        bouce.play()
                         basketballY2 = 51
                         toll = True
                         
                     if basketballY2 > 700:
+                        bouce.play()
                         basketballY2 = 700
                         toll = False
                         
@@ -441,11 +453,13 @@ while game_loop is True:
                     if paddleY < basketballY + 51 and paddleY + 116 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
                             #print('ok')
+                            impact.play()
                             false = True
                             lol = True                            
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
                             print('ok')
+                            impact.play()
                             false = True
                             
                             
@@ -456,28 +470,33 @@ while game_loop is True:
                     if paddleY < basketballY2 + 51 and paddleY + 116 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             #print('ok')
+                            impact.play()
                             true = False
                             pol = True                            
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             print('yeah!!!')
+                            impact.play()
                             true = False
                             
-                            
+                    if prank is True:
+                        prank = False
+                    if mang is True:
+                        mang = False                        
 
-                    if basketballX < 0:
+                    if basketballX < 51:
                         prank = True
                         
-                    if basketballX2 < 1:
+                    if basketballX2 < 51:
                         mang = True
 
 
-
-##                    if prank is True:
-##                        false = False
-##                    
-##                    if mang is True:
-##                        true = True
+                    if prank is True:
+                        false = False
+                        lol = False
+                    if mang is True:
+                        true = True
+                        pol = False
 
  
                         
@@ -491,9 +510,9 @@ while game_loop is True:
                     if true is False:
                         basketballX2 -= house_timing
                         if sim_sim is False:
-                            basketballY2 += house_timing
-                        if sim_sim is True:
                             basketballY2 -= house_timing
+                        if sim_sim is True:
+                            basketballY2 += house_timing
 
 
                             
@@ -527,9 +546,9 @@ while game_loop is True:
                             kulja = False
                     if true is False:
                         if basketballY2 < 51:
-                            sim_sim = False
-                        if basketballY2 > 700:
                             sim_sim = True
+                        if basketballY2 > 700:
+                            sim_sim = False
                             
 
 
@@ -581,19 +600,23 @@ while game_loop is True:
 
                          
                     if basketballY < 51:
+                        bouce.play()
                         basketballY = 51
                         soll = True
                         
                     if basketballY > 700:
+                        bouce.play()
                         basketballY = 700
                         soll = False
 
                         
                     if basketballY2 < 51:
+                        bouce.play()
                         basketballY2 = 51
                         toll = True
                         
                     if basketballY2 > 700:
+                        bouce.play()
                         basketballY2 = 700
                         toll = False
 
@@ -643,11 +666,13 @@ while game_loop is True:
                     if paddleY < basketballY + 51 and paddleY + 116 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
                             #print('ok')
+                            impact.play()
                             false = True
                             lol = True                            
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
                             print('ok')
+                            impact.play()
                             false = True
                             
                             
@@ -658,28 +683,33 @@ while game_loop is True:
                     if paddleY < basketballY2 + 51 and paddleY + 116 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             #print('ok')
+                            impact.play()
                             true = False
                             pol = True                            
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             print('yeah!!!')
+                            impact.play()
                             true = False
                             
-                            
+                    if prank is True:
+                        prank = False
+                    if mang is True:
+                        mang = False                        
 
-                    if basketballX < 0:
+                    if basketballX < 51:
                         prank = True
                         
-                    if basketballX2 < 1:
+                    if basketballX2 < 51:
                         mang = True
 
 
-
-##                    if prank is True:
-##                        false = False
-##                    
-##                    if mang is True:
-##                        true = True
+                    if prank is True:
+                        false = False
+                        lol = False
+                    if mang is True:
+                        true = True
+                        pol = False
 
  
                         
@@ -783,21 +813,26 @@ while game_loop is True:
 
                          
                     if basketballY < 51:
+                        bouce.play()
                         basketballY = 51
                         soll = True
                         
                     if basketballY > 700:
+                        bouce.play()
                         basketballY = 700
                         soll = False
 
                         
                     if basketballY2 < 51:
+                        bouce.play()
                         basketballY2 = 51
                         toll = True
                         
                     if basketballY2 > 700:
+                        bouce.play()
                         basketballY2 = 700
                         toll = False
+
 
 
 

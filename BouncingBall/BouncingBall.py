@@ -162,6 +162,8 @@ while game_loop is True:
 
     if lscreen >= 0 and lscreen <= 100:
         screen.blit(background1, (0,0))
+        dS()
+        opefjigwqjIup()
     if lscreen >= 200 and lscreen <= 301:
         screen.blit(background3, (0,0))
     if lscreen >= 300 and lscreen <= 401:
@@ -170,16 +172,17 @@ while game_loop is True:
         screen.blit(background12, (0,0))
         dS()
         opefjigwqjIup()
+    if lscreen >= 300 and lscreen <= 601:
+        screen.blit(background4, (0,0))        
+        dS()
+        opefjigwqjIup()
     if lscreen >= 600:
         screen.blit(background5, (0,0))        
         dS()
         opefjigwqjIup()
-    elif lscreen >= 300:
-        screen.blit(background4, (0,0))        
-        dS()
-        opefjigwqjIup()
 
-    if uhh == 1:    
+        
+    if uhh == 1:
         toll = True
         soll = False
 
@@ -792,9 +795,9 @@ while game_loop is True:
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
-                                paddleYC = -house_timing
+                                paddleYC = -1
                             if event.key == pygame.K_DOWN:
-                                paddleYC = house_timing
+                                paddleYC = 1
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0

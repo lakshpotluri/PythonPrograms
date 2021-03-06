@@ -29,11 +29,11 @@ background1 = pygame.image.load("background1.png")
 
 background4 = pygame.image.load("background4.jpg")
 
-background5 = pygame.image.load("background5.jpg")
+background5 = pygame.image.load("background3.jpg")
 
 background12 = pygame.image.load("background12.png")
 
-background3 = pygame.image.load("background3.png")
+background3 = pygame.image.load("background5.jpg")
 
 background2 = pygame.image.load("background2.jpg")
 

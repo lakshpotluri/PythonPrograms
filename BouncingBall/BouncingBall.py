@@ -16,8 +16,11 @@ screen = pygame.display.set_mode((1500, 800))
 
 #engine = pygame.display.set_mode((screensize))
 
-house_timing = 1.5
+bwhahaha = False
 
+if bwhahaha is False:
+    house_timing = 1.5
+    
 grey = (255)
 
 icon = pygame.image.load('bouncy.png')
@@ -415,7 +418,7 @@ while game_loop is True:
                 print ('I')
                 
                 while game_loop is True:
-                    
+                                        
                     if basketballX >= 1500:
                         if balls == 2:
                             balls == 1
@@ -628,6 +631,9 @@ while game_loop is True:
                 print ('P')
                 
                 while game_loop is True:
+
+                    bwhahaha = True
+                    house_timing = 3
                     
                     if basketballX >= 1500:
                         if balls == 2:
@@ -731,7 +737,7 @@ while game_loop is True:
                             basketballY2 += house_timing
 
 
-                            
+                                                
 
                         
                     if false is False:                        

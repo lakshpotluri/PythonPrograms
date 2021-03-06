@@ -418,6 +418,8 @@ while game_loop is True:
                 print ('I')
                 
                 while game_loop is True:
+
+                    house_timing = 1.5
                                         
                     if basketballX >= 1500:
                         if balls == 2:
@@ -585,9 +587,9 @@ while game_loop is True:
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
-                                paddleYC = -1.2
+                                paddleYC = -0.5
                             if event.key == pygame.K_DOWN:
-                                paddleYC = 1.2
+                                paddleYC = 0.5
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0

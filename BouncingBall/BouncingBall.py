@@ -369,9 +369,9 @@ while game_loop is True:
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
-                                paddleYC = -house_timing
+                                paddleYC = -1.7
                             if event.key == pygame.K_DOWN:
-                                paddleYC = house_timing
+                                paddleYC = 1.7
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0
@@ -582,9 +582,9 @@ while game_loop is True:
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
-                                paddleYC = -house_timing
+                                paddleYC = -1.2
                             if event.key == pygame.K_DOWN:
-                                paddleYC = house_timing
+                                paddleYC = 1.2
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0
@@ -795,9 +795,9 @@ while game_loop is True:
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
-                                paddleYC = -1
+                                paddleYC = -0.8
                             if event.key == pygame.K_DOWN:
-                                paddleYC = 1
+                                paddleYC = 0.8
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0

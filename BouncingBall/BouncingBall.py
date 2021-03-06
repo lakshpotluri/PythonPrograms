@@ -69,6 +69,16 @@ balls = 2
 bouce = mixer.Sound('BASKETBL.wav')
 impact = mixer.Sound('at_last.mp3')
 
+score1 = 0
+
+font = pygame.font.Font('Sweety Rasty (3).otf',200)
+
+def score12(x,y):
+    score = font.render("score :" + str(score1),True,(grey,grey,grey ))
+    if lulu or pulu is True:                            
+        screen.blit(score,(x,y))
+    pygame.display.update()
+
 
 controls2 = pygame.font.Font('DS.otf',60)
 rrr = '''Press 'E' for Easy level '''
@@ -151,6 +161,9 @@ putu = False
 
 print(lscreen)
 
+pulu = True
+lulu = True
+
 while game_loop is True:
 
     #pygame.draw.rect(screen,grey,(945,45,390,477))
@@ -206,15 +219,20 @@ while game_loop is True:
                 print ('E')
                 while game_loop is True:
                     
+                    score12(900,20)
+
+                        
                     if basketballX >= 1500:
                         if balls == 2:
                             balls == 1
                             poop = False
                             cmon = True
+                            pulu = False
                             for_the_other_one = True
                     if basketballX2 >= paddleX:
                         if balls == 1:
                             cmon = True
+                            pulu = False
                             if gscreen > 0 and gscreen < 101:                                    
                                 screen.blit(game_over_screen, (0,0))
                             if gscreen > 100 and gscreen < 201:                                    
@@ -226,12 +244,14 @@ while game_loop is True:
                         if balls == 2:
                             balls == 1
                             soop = False
+                            lulu = False
                             lmon = True
                             for_the_other_one2 = True
                     if for_the_other_one2 is False:
                         if basketballX2 >= paddleX:
                             if balls == 1:
                                 lmon = True
+                                lulu = False
                                 balls == 0
                                 if gscreen > 0 and gscreen < 101:                                    
                                     screen.blit(game_over_screen, (0,0))
@@ -247,12 +267,14 @@ while game_loop is True:
                         if basketballX + 51 == paddleX:
                             #print('ok')
                             impact.play()
+                            score1 += 1
                             false = True
                             lol = True                            
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
                             print('ok')
                             impact.play()
+                            score1 += 1
                             false = True
                             
                             
@@ -263,12 +285,14 @@ while game_loop is True:
                     if paddleY < basketballY2 + 51 and paddleY + 116 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             #print('ok')
+                            score1 += 1
                             impact.play()
                             true = False
                             pol = True                            
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             print('yeah!!!')
+                            score1 += 1
                             impact.play()
                             true = False
                             
@@ -363,7 +387,7 @@ while game_loop is True:
                     if soop or poop is True:
                         screen.blit(basketball2, (basketballX2,basketballY2))
 
-                    pygame.display.update()
+                    
 
 
 
@@ -420,16 +444,20 @@ while game_loop is True:
                 while game_loop is True:
 
                     house_timing = 1.5
+
+                    score12(900,20)
                                         
                     if basketballX >= 1500:
                         if balls == 2:
                             balls == 1
                             poop = False
                             cmon = True
+                            pulu = False
                             for_the_other_one = True
                     if basketballX2 >= paddleX:
                         if balls == 1:
                             cmon = True
+                            pulu = False
                             if gscreen > 0 and gscreen < 101:                                    
                                 screen.blit(game_over_screen, (0,0))
                             if gscreen > 100 and gscreen < 201:                                    
@@ -441,12 +469,14 @@ while game_loop is True:
                         if balls == 2:
                             balls == 1
                             soop = False
+                            lulu = False
                             lmon = True
                             for_the_other_one2 = True
                     if for_the_other_one2 is False:
                         if basketballX2 >= paddleX:
                             if balls == 1:
                                 lmon = True
+                                lulu = False
                                 balls == 0
                                 if gscreen > 0 and gscreen < 101:                                    
                                     screen.blit(game_over_screen, (0,0))
@@ -462,11 +492,13 @@ while game_loop is True:
                         if basketballX + 51 == paddleX:
                             #print('ok')
                             impact.play()
+                            score1 += 1
                             false = True
                             lol = True                            
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
                             print('ok')
+                            score1 += 1
                             impact.play()
                             false = True
                             
@@ -478,12 +510,14 @@ while game_loop is True:
                     if paddleY < basketballY2 + 51 and paddleY + 116 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             #print('ok')
+                            score1 += 1
                             impact.play()
                             true = False
                             pol = True                            
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             print('yeah!!!')
+                            score1 += 1
                             impact.play()
                             true = False
                             
@@ -578,7 +612,6 @@ while game_loop is True:
                     if soop or poop is True:
                         screen.blit(basketball2, (basketballX2,basketballY2))
 
-                    pygame.display.update()
 
 
 
@@ -634,18 +667,21 @@ while game_loop is True:
                 
                 while game_loop is True:
 
-                    bwhahaha = True
                     house_timing = 3
-                    
+
+                    score12(900,20)
+                                        
                     if basketballX >= 1500:
                         if balls == 2:
                             balls == 1
                             poop = False
                             cmon = True
+                            pulu = False
                             for_the_other_one = True
                     if basketballX2 >= paddleX:
                         if balls == 1:
                             cmon = True
+                            pulu = False
                             if gscreen > 0 and gscreen < 101:                                    
                                 screen.blit(game_over_screen, (0,0))
                             if gscreen > 100 and gscreen < 201:                                    
@@ -657,12 +693,14 @@ while game_loop is True:
                         if balls == 2:
                             balls == 1
                             soop = False
+                            lulu = False
                             lmon = True
                             for_the_other_one2 = True
                     if for_the_other_one2 is False:
                         if basketballX2 >= paddleX:
                             if balls == 1:
                                 lmon = True
+                                lulu = False
                                 balls == 0
                                 if gscreen > 0 and gscreen < 101:                                    
                                     screen.blit(game_over_screen, (0,0))
@@ -676,6 +714,7 @@ while game_loop is True:
 
                     if paddleY < basketballY + 51 and paddleY + 116 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
+                            score1 += 1
                             #print('ok')
                             impact.play()
                             false = True
@@ -683,6 +722,7 @@ while game_loop is True:
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
                             print('ok')
+                            score1 += 1
                             impact.play()
                             false = True
                             
@@ -694,12 +734,14 @@ while game_loop is True:
                     if paddleY < basketballY2 + 51 and paddleY + 116 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             #print('ok')
+                            score1 += 1
                             impact.play()
                             true = False
                             pol = True                            
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
                             print('yeah!!!')
+                            score1 += 1
                             impact.play()
                             true = False
                             
@@ -739,7 +781,7 @@ while game_loop is True:
                             basketballY2 += house_timing
 
 
-                                                
+                            
 
                         
                     if false is False:                        
@@ -794,7 +836,6 @@ while game_loop is True:
                     if soop or poop is True:
                         screen.blit(basketball2, (basketballX2,basketballY2))
 
-                    pygame.display.update()
 
 
 
@@ -803,9 +844,9 @@ while game_loop is True:
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_UP:
-                                paddleYC = -0.8
+                                paddleYC = -1
                             if event.key == pygame.K_DOWN:
-                                paddleYC = 0.8
+                                paddleYC = 1
                         if event.type == pygame.KEYUP:
                             if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                                 paddleYC = 0

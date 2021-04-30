@@ -216,7 +216,7 @@ while game_loop is True:
             sys.exit()        
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_e:    
-                print ('E')
+                #print ('E')
                 while game_loop is True:
                     
                     score12(900,20)
@@ -272,7 +272,7 @@ while game_loop is True:
                             lol = True                            
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
-                            print('ok')
+                            #print('ok')
                             impact.play()
                             score1 += 1
                             false = True
@@ -291,7 +291,7 @@ while game_loop is True:
                             pol = True                            
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
-                            print('yeah!!!')
+                            #print('yeah!!!')
                             score1 += 1
                             impact.play()
                             true = False
@@ -439,7 +439,7 @@ while game_loop is True:
                         
                      
             if event.key == pygame.K_i:
-                print ('I')
+                #print ('I')
                 
                 while game_loop is True:
 
@@ -497,7 +497,7 @@ while game_loop is True:
                             lol = True                            
                     if paddleY + 116 < basketballY + 51 and paddleY + 232 >= basketballY + 51:
                         if basketballX + 51 == paddleX:
-                            print('ok')
+                            #print('ok')
                             score1 += 1
                             impact.play()
                             false = True
@@ -516,7 +516,7 @@ while game_loop is True:
                             pol = True                            
                     if paddleY + 116 < basketballY2 + 51 and paddleY + 232 >= basketballY2 + 51:
                         if basketballX2 + 51 == paddleX:
-                            print('yeah!!!')
+                            #print('yeah!!!')
                             score1 += 1
                             impact.play()
                             true = False
@@ -637,7 +637,7 @@ while game_loop is True:
                     if paddleY > 510:
                         paddleY = 510
                         
-                        
+                    #ummmmm me doing this in vs code                       
 
                          
                     if basketballY < 51:
@@ -682,7 +682,7 @@ while game_loop is True:
                         if balls == 1:
                             cmon = True
                             pulu = False
-                            if gscreen > 0 and gscreen < 101:                                    
+                            if gscreen > 0 and gscreen < 101:                                                     
                                 screen.blit(game_over_screen, (0,0))
                             if gscreen > 100 and gscreen < 201:                                    
                                 screen.blit(game2, (0,0))
